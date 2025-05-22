@@ -1,14 +1,13 @@
-// components
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 
 
 
-export default function Home() {
+export default function Search() {
     return (
         <>
-            <Header />
-            <SideBar currentPage='home' />
+            <Header/>
+            <SideBar currentPage='search' />
         </>
     )
 }

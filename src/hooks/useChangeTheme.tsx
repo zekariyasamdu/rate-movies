@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 
+type useChangeThemeReturns= {
+    theme: boolean, 
+    setTheme: React.Dispatch<React.SetStateAction<boolean>>
+}
 
-export default function useChangeTheme() {
+export default function useChangeTheme(): useChangeThemeReturns  {
 
     const [theme, setTheme] = useState(() => {
         let value: string | null = localStorage.getItem('theme')

@@ -1,14 +1,12 @@
-// components
 import Header from "../components/Header";
 import SideBar from "../components/SideBar";
 
 
-
-export default function Home() {
+export default function Trending() {
     return (
         <>
             <Header />
-            <SideBar currentPage='home' />
+            <SideBar currentPage='trending' />
         </>
     )
 }

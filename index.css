@@ -8,9 +8,9 @@
     --color-D-secondary: oklch(0.216 0.006 56.043);
     --color-D-tertiary:  oklch(0.268 0.007 34.298);
 
-    --color-L-primary:  oklch(0.709 0.01 56.259);
+    --color-L-primary:  oklch(0.869 0.005 56.366) ;
     --color-L-secondary: oklch(0.985 0.001 106.423);
-    --color-L-tertiary:  oklch(0.869 0.005 56.366) ;
+    --color-L-tertiary:  oklch(0.709 0.01 56.259);
     --font-open-sans:  Open Sans, "sans-serif";
 }
 
@@ -23,12 +23,14 @@
 
 @layer base {
     body{
-        @apply h-screen m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary ;
+        @apply relative h-screen m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary ;
     }
 }
 
 @layer components {
-    /*  */
+    .side-bar-items {
+        @apply  w-9 h-9 p-1 flex justify-center items-center rounded-full cursor-pointer my-2.5 text-D-primary hover:bg-L-primary dark:text-L-primary  dark:hover:bg-D-primary;
+    }
 } 
     
 
