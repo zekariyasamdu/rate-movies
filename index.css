@@ -31,6 +31,12 @@
     .side-bar-items {
         @apply  w-9 h-9 p-1 flex justify-center items-center rounded-full cursor-pointer my-2.5 text-D-primary hover:bg-L-primary dark:text-L-primary  dark:hover:bg-D-primary;
     }
+    .headers {
+        @apply  absolute m-auto p-3 gap-5 flex flex-row items-center justify-between right-0 left-0 my-4 rounded-2xl w-1/2 h-10 z-30 bg-L-tertiary dark:bg-D-tertiary
+    }
+    .headers-items {
+        @apply cursor-pointer text-D-primary dark:text-L-primary hover:border-b-2 hover:border-blue-200  hover:text-white
+    }
 } 
     
 

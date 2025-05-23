@@ -1,8 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // components 
 import Home from "../pages/HomePage";
-import Trending from "../pages/TrendingPage";
 import Search from "../pages/SearchPage";
+import TrendingMovies from "../pages/TrendingMoviesPage";
+import TrendingPeople from "../pages/TrendingPeoplePage";
+import TrendingTv from "../pages/TrendingTvPage";
 
 
 export default function AppRouters() {
@@ -13,11 +15,19 @@ export default function AppRouters() {
                 <Route path="/"
                     element={<Home />}
                 />
-                <Route path="/trending"
-                    element={<Trending/>}
-                />
                 <Route path="/search"
                     element={<Search/>}
+                />
+
+                {/* thrending routes */}
+                <Route path="/trending/movies"
+                    element={<TrendingMovies/>}
+                />
+                <Route path="/trending/people"
+                    element={<TrendingPeople/>}
+                />
+                <Route path="/trending/tv"
+                    element={<TrendingTv/>}
                 />
             </Routes>
         </BrowserRouter>

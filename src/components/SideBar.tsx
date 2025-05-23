@@ -53,7 +53,7 @@ export default function SideBar({ currentPage }: SideBarProps) {
             {/* Trending */}
             <div className={`side-bar-items ${currentPage === 'trending' ? "text-blue-500" : ''}`}
                 title="Trending">
-                <Link to='/trending' >
+                <Link to='/trending/people' >
                     <FontAwesomeIcon icon={faFireFlameCurved} />
                 </Link>
             </div>
@@ -68,6 +68,7 @@ export default function SideBar({ currentPage }: SideBarProps) {
                         title="dark-mode"
                         icon={faMoon} />}
             </div>
+            
         </div>
     )
 }
