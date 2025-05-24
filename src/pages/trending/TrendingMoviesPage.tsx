@@ -1,24 +1,36 @@
+// components 
 import HeaderTrending from "../../components/HeaderTrending";
+import LoadingScreen from "../../components/LoadingScreen";
 import LoadedMovies from "../../components/MovieContainer";
 import PageTurner from "../../components/PageTurner";
 import SideBar from "../../components/SideBar";
+// contexts
 import { ContentUpdatedContext } from "../../contexts/ContentUpdatedContext";
+import { LoadingScreenContext } from "../../contexts/LoadingScreenContext";
 import { PageNumberContext } from "../../contexts/PageNumberContext";
 
 
 export default function TrendingMovies() {
     return (
         <>
+            <LoadingScreenContext>
+                <ContentUpdatedContext>
+                    <PageNumberContext>
 
-            <SideBar currentPage='trending' />
+                        <LoadingScreen>
+                            <SideBar currentPage='trending' />
+                            <HeaderTrending currentPage='movies' />
+                            <PageTurner />
+                            <LoadedMovies />
+                        </LoadingScreen>
 
-            <ContentUpdatedContext>
-                <PageNumberContext>
-                    <HeaderTrending currentPage='movies' />
-                    <PageTurner />
-                </PageNumberContext>
-                <LoadedMovies />
-            </ContentUpdatedContext>
+
+
+                    </PageNumberContext>
+                </ContentUpdatedContext>
+            </LoadingScreenContext>
+
+
 
 
         </>
