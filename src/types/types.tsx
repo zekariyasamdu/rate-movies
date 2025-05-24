@@ -12,11 +12,18 @@ type aStateWithString = {
     setterFunc: React.Dispatch<React.SetStateAction<string>>
 }
 
-interface childrenProps{
+interface childrenProps {
     children: React.ReactNode
+}
+
+interface fetchedLocalStorageType {
+    page: number,
+    results: [],
+    total_pages: number,
+    total_results: number
+
 }
 
 
 
-
-export type {aStatetWithNumber, aStateWithString, childrenProps}
+export type { aStatetWithNumber, aStateWithString, childrenProps, fetchedLocalStorageType }
