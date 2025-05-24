@@ -1,6 +1,9 @@
+// hooks
 import { useContext } from "react";
+import useFetchLocalData from "../hooks/fetch-data-hooks/useFetchLocalData";
+// context
 import { contentUpdatedContext } from "../contexts/ContentUpdatedContext";
-import useFetchLocalData from "../hooks/useFetchLocalData";
+
 
 export default function LoadedMovies() {
 

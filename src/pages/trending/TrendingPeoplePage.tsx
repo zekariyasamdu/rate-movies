@@ -1,5 +1,5 @@
-import HeaderTrending from "../components/HeaderTrending";
-import SideBar from "../components/SideBar";
+import HeaderTrending from "../../components/HeaderTrending";
+import SideBar from "../../components/SideBar";
 
 
 export default function TrendingPeople() {

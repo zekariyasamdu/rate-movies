@@ -37,6 +37,9 @@
     .headers-items {
         @apply cursor-pointer text-D-primary dark:text-L-primary hover:border-b-2 hover:border-blue-200  hover:text-white
     }
+    .page-turner {
+        @apply cursor-pointer border-2 w-16 text-[20px] border-blue-400 hover:text-white
+    }
 } 
     
 

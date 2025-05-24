@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faHouse, faMagnifyingGlass, faFireFlameCurved } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 // Hooks
-import useChangeTheme from "../hooks/useChangeTheme";
+import useChangeTheme from "../hooks/style-hooks/useChangeTheme";
 // Roters
 import { Link } from "react-router-dom";
-import useResizeSideBars from "../hooks/useResizeSideBars";
+import useResizeSideBars from "../hooks/style-hooks/useResizeSideBars";
 
 interface SideBarProps {
     currentPage: string
@@ -27,6 +27,9 @@ export default function SideBar({ currentPage }: SideBarProps) {
         setTheme(!theme)
     }
 
+    // constants 
+    const focusedOnStyle: string = 'text-blue-500'
+
     return (
         <div className={`absolute top-20 left-2.5 z-20 ${widthValue} gap-5 rounded-3xl h-100 flex flex-col ${position} bg-L-tertiary dark:bg-D-tertiary`}>
             {/* Resizing The Sidebar */}
@@ -37,21 +40,21 @@ export default function SideBar({ currentPage }: SideBarProps) {
                     icon={faBars} />
             </div>
             {/*  Search  */}
-            <div className={`side-bar-items ${currentPage === 'search' ? "text-blue-500" : ''}`}
+            <div className={`side-bar-items ${currentPage === 'search' ? focusedOnStyle : ''}`}
                 title="Search">
                 <Link to='/search'>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Link>
             </div>
             {/* Routes To Homepage */}
-            <div className={`side-bar-items ${currentPage === 'home' ? "text-blue-500" : ''}`}
+            <div className={`side-bar-items ${currentPage === 'home' ? focusedOnStyle : ''}`}
                 title="Home Page">
                 <Link to='/'>
                     <FontAwesomeIcon icon={faHouse} />
                 </Link>
             </div>
             {/* Trending */}
-            <div className={`side-bar-items ${currentPage === 'trending' ? "text-blue-500" : ''}`}
+            <div className={`side-bar-items ${currentPage === 'trending' ? focusedOnStyle : ''}`}
                 title="Trending">
                 <Link to='/trending/people' >
                     <FontAwesomeIcon icon={faFireFlameCurved} />

@@ -2,9 +2,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 // components 
 import Home from "../pages/HomePage";
 import Search from "../pages/SearchPage";
-import TrendingMovies from "../pages/TrendingMoviesPage";
-import TrendingPeople from "../pages/TrendingPeoplePage";
-import TrendingTv from "../pages/TrendingTvPage";
+import TrendingMovies from "../pages/trending/TrendingMoviesPage";
+import TrendingPeople from "../pages/trending/TrendingPeoplePage";
+import TrendingTv from "../pages/trending/TrendingTvPage";
 
 
 export default function AppRouters() {

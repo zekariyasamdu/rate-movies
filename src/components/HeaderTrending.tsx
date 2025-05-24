@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
-import useFetchRawData from "../hooks/useFetchRawData";
+// hooks
 import { useContext } from "react";
+import useFetchRawData from "../hooks/fetch-data-hooks/useFetchRawData";
+// contexts
 import { pageNumberContext } from "../contexts/PageNumberContext";
 import { contentUpdatedContext } from "../contexts/ContentUpdatedContext";
+// routers
+import { Link } from "react-router-dom";
 
 
+
+// types
 interface HeaderTrending {
     currentPage: string
 }
