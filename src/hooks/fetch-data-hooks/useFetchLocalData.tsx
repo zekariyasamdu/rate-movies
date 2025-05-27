@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import type { fetchedLocalStorageType } from "../types/types";
+import type { fetchedLocalStorageType } from "../../types/types";
 
 
 

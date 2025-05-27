@@ -8,7 +8,6 @@ import { contentUpdatedContext } from "../contexts/ContentUpdatedContext";
 import { Link } from "react-router-dom";
 
 
-
 // types
 interface HeaderTrending {
     currentPage: string
@@ -44,7 +43,6 @@ export default function HeaderTrending({ currentPage }: HeaderTrending) {
                 onClick={changeTimePeriod}>Days</div>
             <div className={`headers-items ${timePeriod === 'week' ? selctedOptionStyle : ''}`}
                 onClick={changeTimePeriod}>Weeks</div>
-
         </div>
     )
 }

@@ -32,7 +32,7 @@ export default function PageTurner() {
     }
 
 
-    console.log(fetchedData)
+    
     return (
         <div className="absolute w-max h-max gap-3 p-2 flex justify-between rounded-2xl m-auto left-0 right-0 top-20  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
             title="pages">

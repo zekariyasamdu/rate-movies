@@ -24,6 +24,11 @@ interface fetchedLocalStorageType {
 
 }
 
+interface eachArrayType {
+    title: string,
+    backdrop_path:string,
+    poster_path: string
+}
 
 
-export type { aStatetWithNumber, aStateWithString, childrenProps, fetchedLocalStorageType }
+export type { aStatetWithNumber, aStateWithString, childrenProps, fetchedLocalStorageType, eachArrayType }
