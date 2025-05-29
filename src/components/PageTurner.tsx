@@ -34,7 +34,7 @@ export default function PageTurner() {
 
     
     return (
-        <div className="absolute w-max h-max gap-3 p-2 flex justify-between rounded-2xl m-auto left-0 right-0 top-20  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
+        <div className=" w-max h-max gap-3 p-2 justify-between rounded-2xl mt-30 mb-15 inline-block  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
             title="pages">
             <button className="page-turner"
                 onClick={goToPreviousPage}> <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon></button>

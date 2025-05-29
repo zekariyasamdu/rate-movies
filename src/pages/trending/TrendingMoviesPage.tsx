@@ -22,6 +22,7 @@ export default function TrendingMovies() {
                             <HeaderTrending currentPage='movies' />
                             <PageTurner />
                             <LoadedMovies />
+                            <PageTurner />
                         </LoadingScreen>
 
 
