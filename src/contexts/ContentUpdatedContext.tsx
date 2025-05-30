@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import type { childrenProps } from "../types/types";
+import type { childrenProps } from "../types/objects";
 
 
 type contentUpdatedContextType = {

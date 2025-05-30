@@ -1,7 +1,7 @@
 // hooks
 import { useState } from "react";
 // types
-import type { eachPersonArrayType } from "../../types/types";
+import type { eachPersonArrayType } from "../../types/objects";
 
 interface EachPersonContainerProp {
     item: eachPersonArrayType
