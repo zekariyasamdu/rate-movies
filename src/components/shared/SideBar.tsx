@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faHouse, faMagnifyingGlass, faFireFlameCurved } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 // Hooks
-import useChangeTheme from "../hooks/style-hooks/useChangeTheme";
+import useChangeTheme from "../../hooks/style-hooks/useChangeTheme";
 // Roters
 import { Link } from "react-router-dom";
-import useResizeSideBars from "../hooks/style-hooks/useResizeSideBars";
+import useResizeSideBars from "../../hooks/style-hooks/useResizeSideBars";
 
 interface SideBarProps {
     currentPage: string

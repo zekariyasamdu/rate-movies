@@ -1,9 +1,9 @@
 // hooks
 import { useContext } from "react";
-import useFetchRawData from "../hooks/fetch-data-hooks/useFetchRawData";
+import useFetchRawData from "../../hooks/fetch-data-hooks/useFetchRawData";
 // contexts
-import { pageNumberContext } from "../contexts/PageNumberContext";
-import { contentUpdatedContext } from "../contexts/ContentUpdatedContext";
+import { pageNumberContext } from "../../contexts/PageNumberContext";
+import { contentUpdatedContext } from "../../contexts/ContentUpdatedContext";
 // routers
 import { Link } from "react-router-dom";
 
@@ -19,7 +19,7 @@ export default function HeaderTrending({ currentPage }: HeaderTrending) {
     const { pageNumber } = useContext(pageNumberContext)
     const { newDataFetched, setDataFetched } = useContext(contentUpdatedContext)
 
-    const { timePeriod, setTimePeriod } = useFetchRawData(pageNumber, setDataFetched);
+    const { timePeriod, setTimePeriod } = useFetchRawData(pageNumber, setDataFetched, currentPage);
     function changeTimePeriod() {
         timePeriod === 'day' ? setTimePeriod('week') : setTimePeriod('day');
     }
@@ -30,10 +30,10 @@ export default function HeaderTrending({ currentPage }: HeaderTrending) {
     return (
         <div className="headers">
             <Link to='/trending/people'>
-                <div className={`headers-items ${currentPage === 'people' ? selctedOptionStyle : ''}`}>People</div>
+                <div className={`headers-items ${currentPage === 'person' ? selctedOptionStyle : ''}`}>People</div>
             </Link>
             <Link to='/trending/movies'>
-                <div className={`headers-items ${currentPage === 'movies' ? selctedOptionStyle : ''}`}>Movies</div>
+                <div className={`headers-items ${currentPage === 'movie' ? selctedOptionStyle : ''}`}>Movies</div>
             </Link>
             <Link to='/trending/tv'>
                 <div className={`headers-items ${currentPage === 'tv' ? selctedOptionStyle : ''}`}>Tv</div>

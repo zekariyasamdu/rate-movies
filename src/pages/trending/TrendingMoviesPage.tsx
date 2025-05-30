@@ -1,9 +1,9 @@
 // components 
-import HeaderTrending from "../../components/HeaderTrending";
-import LoadingScreen from "../../components/LoadingScreen";
-import LoadedMovies from "../../components/MovieContainer";
-import PageTurner from "../../components/PageTurner";
-import SideBar from "../../components/SideBar";
+import HeaderTrending from "../../components/shared/HeaderTrending";
+import LoadingScreen from "../../components/shared/LoadingScreen";
+import LoadedMovies from "../../components/movies/MovieContainer";
+import PageTurner from "../../components/shared/PageTurner";
+import SideBar from "../../components/shared/SideBar";
 // contexts
 import { ContentUpdatedContext } from "../../contexts/ContentUpdatedContext";
 import { LoadingScreenContext } from "../../contexts/LoadingScreenContext";
@@ -19,7 +19,7 @@ export default function TrendingMovies() {
 
                         <LoadingScreen>
                             <SideBar currentPage='trending' />
-                            <HeaderTrending currentPage='movies' />
+                            <HeaderTrending currentPage='movie' />
                             <PageTurner />
                             <LoadedMovies />
                             <PageTurner />

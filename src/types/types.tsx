@@ -18,18 +18,25 @@ interface childrenProps {
 
 interface fetchedLocalStorageType {
     page: number,
-    results: [],
+    results:  [],
     total_pages: number,
     total_results: number
 
 }
 
-interface eachArrayType {
+interface eachMovieArrayType {
     title: string,
     backdrop_path:string,
     poster_path: string,
-    vote_average: string
+    vote_average: number
+}
+
+interface eachPersonArrayType {
+    profile_path: string,
+    name:string,
+    popularity: number,
 }
 
 
-export type { aStatetWithNumber, aStateWithString, childrenProps, fetchedLocalStorageType, eachArrayType }
+
+export type { aStatetWithNumber, aStateWithString, childrenProps, fetchedLocalStorageType, eachMovieArrayType, eachPersonArrayType }

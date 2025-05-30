@@ -3,20 +3,20 @@ import { loadingScreenContext } from "../../contexts/LoadingScreenContext";
 
 type useFetchRawDataReturn = {
     timePeriod: string,
-    setTimePeriod: React.Dispatch<React.SetStateAction<string>>
+    setTimePeriod: React.Dispatch<React.SetStateAction<string>>,
+
 }
 
-export default function useFetchRawData(pageNumber: number, setDataFetched: React.Dispatch<React.SetStateAction<number>>): useFetchRawDataReturn{
+export default function useFetchRawData(pageNumber: number, setDataFetched: React.Dispatch<React.SetStateAction<number>>, currentPage: string): useFetchRawDataReturn{
     
     const [timePeriod, setTimePeriod] = useState('day');
     const {isloading, setIsLoading} = useContext(loadingScreenContext)
-
     useEffect(() => {
         
         const getTrendingMovies = async () => {
             try {
                 setIsLoading(!isloading)
-                const rawData: Response = await fetch(`https://api.themoviedb.org/3/trending/movie/${timePeriod}?page=${pageNumber}?language=en-US`, {
+                const rawData: Response = await fetch(`https://api.themoviedb.org/3/trending/${currentPage}/${timePeriod}?page=${pageNumber}?language=en-US`, {
                     headers: {
                         'Authorization': `Bearer ${import.meta.env.VITE_API_READ_ACCESS_TOKEN}`
                     }

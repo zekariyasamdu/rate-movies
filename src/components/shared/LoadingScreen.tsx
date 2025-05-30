@@ -1,7 +1,7 @@
 // types
 import { useContext } from "react";
-import type { childrenProps } from "../types/types";
-import { loadingScreenContext } from "../contexts/LoadingScreenContext";
+import type { childrenProps } from "../../types/types";
+import { loadingScreenContext } from "../../contexts/LoadingScreenContext";
 
 
 export default function LoadingScreen({ children }: childrenProps) {

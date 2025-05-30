@@ -1,11 +1,11 @@
 // Hooks
 import { useContext } from "react"
-import useFetchLocalData from "../hooks/fetch-data-hooks/useFetchLocalData"
+import useFetchLocalData from "../../hooks/fetch-data-hooks/useFetchLocalData"
 
-import useGeneratePageNumbers from "../hooks/style-hooks/useGeneratePageNumbers"
+import useGeneratePageNumbers from "../../hooks/style-hooks/useGeneratePageNumbers"
 // contexts
-import { contentUpdatedContext } from "../contexts/ContentUpdatedContext"
-import { pageNumberContext } from "../contexts/PageNumberContext"
+import { contentUpdatedContext } from "../../contexts/ContentUpdatedContext"
+import { pageNumberContext } from "../../contexts/PageNumberContext"
 // icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons"
