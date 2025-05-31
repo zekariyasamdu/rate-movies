@@ -17,28 +17,27 @@ export default function PageTurner() {
     const { pageNumber, setPageNumber } = useContext(pageNumberContext)
     const fetchedData = useFetchLocalData(newDataFetched)
     const lastPage: number | undefined = fetchedData?.total_pages
-    const toBeRenderedNumbes: (number)[] = useGeneratePageNumbers({ pageNumber, lastPage })
+    const toBeRenderedNumbers: (number)[] = useGeneratePageNumbers({ pageNumber, lastPage })
 
     function changePage(page: number) {
         setPageNumber(page)
     }
     function goToPreviousPage(): void {
-        pageNumber - 1 > 0 ? setPageNumber(p => p - 1) : null;
+        if ( pageNumber - 1 > 0)
+            setPageNumber(p => p - 1)
     }
 
     function goToNextPage(): void {
-        if (lastPage)
-            pageNumber + 1 < lastPage ? setPageNumber(p => p + 1) : null;
+        if (lastPage && pageNumber + 1 < lastPage ) setPageNumber(p => p + 1)
     }
 
-
-    
     return (
-        <div className=" w-max h-max gap-3 p-2 justify-between rounded-2xl mt-30 mb-15 inline-block  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
+        <div className="mx-auto flex gap-3 p-2 justify-between rounded-2xl  mb-15  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
             title="pages">
             <button className="page-turner"
                 onClick={goToPreviousPage}> <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon></button>
-            {toBeRenderedNumbes.map((n, i) => (
+               
+            {toBeRenderedNumbers.map((n, i) => (
                 <button className="page-turner"
                     key={i}
                     onClick={() => changePage(n)}>{n.toString()}</button>))}

@@ -23,7 +23,7 @@
 
 @layer base {
     body{
-        @apply relative h-screen m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary ;
+        @apply relative h-screen m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary  overflow-hidden;
     }
 }
 
