@@ -6,6 +6,7 @@ export default function useGeneratePageNumbers({ pageNumber, lastPage }: { pageN
     let currentPage: number = pageNumber;
     let secondNumber: number = 1 + currentPage;
     let thired: number = 2 + currentPage;
+
     if (typeof (lastPage) === "number") {
         if (currentPage === lastPage) {
             toBeDisplayedNumbers = [currentPage]
@@ -17,7 +18,7 @@ export default function useGeneratePageNumbers({ pageNumber, lastPage }: { pageN
         }
 
         if (thired === lastPage) {
-            toBeDisplayedNumbers = [currentPage, secondNumber,]
+            toBeDisplayedNumbers = [currentPage, secondNumber, lastPage]
             return toBeDisplayedNumbers
         }
 

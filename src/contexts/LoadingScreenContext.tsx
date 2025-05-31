@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import type { childrenProps } from "../types/objects";
+import type { childrenProps } from "../types/general";
 
 type loadingScreenContext = {
     isloading: boolean,

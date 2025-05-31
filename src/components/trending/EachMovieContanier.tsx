@@ -2,7 +2,7 @@
 import { useState } from "react";
 // types
 import type { eachMovieArrayType } from "../../types/objects";
-
+// type
 interface EachMovieContainerProp {
     item: eachMovieArrayType
 }
@@ -20,12 +20,14 @@ export default function EachMovieContainer({ item }: EachMovieContainerProp) {
     }
 
     return (
-        <div className="w-[243px] h-[363px] relative m-3 flex-center text-cente hover:cursor-pointer border-3 border-b-L-secondary hover:border-blue-400 " onMouseEnter={displayRatings} onMouseOut={hideRatings}>
+        <div className="w-[243px] h-[363px] relative m-3 flex-center text-cente hover:cursor-pointer border-3 border-b-L-secondary hover:border-blue-400 "
+            onMouseEnter={displayRatings}
+            onMouseOut={hideRatings}>
             <img className={`${displayRating ? "opacity-50" : ''}`} src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} width="240" alt={item.title} />
             {displayRating && <p className="absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-7xl text-L-primary"
                 onMouseEnter={displayRatings}
                 onMouseOut={hideRatings}>
-                    { (Math.round(item.vote_average * 10) / 10).toString()}</p>}
+                {(Math.round(item.vote_average * 10) / 10).toString()}</p>}
         </div>
     )
 }
