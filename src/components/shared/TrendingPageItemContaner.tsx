@@ -1,14 +1,14 @@
 import { useContext } from "react";
 import useFetchLocalData from "../../hooks/fetch-data-hooks/useFetchLocalData";
 import { contentUpdatedContext } from "../../contexts/ContentUpdatedContext";
-import { isMovie, type fetchedLocalStorageType, type ItemType } from "../../types/objects";
+import { isMovie, type fetchedLocalStorageType, type ImdbItem } from "../../types/objects";
 import ItemContainer, { type ItemContainerProp } from "../trending/ItemContainer";
 
 interface TrendingPageMainContainerProp {
     currentPage: string
 }
 
-const mapItemToItemContainer = (item: ItemType): ItemContainerProp => {
+const mapItemToItemContainer = (item: ImdbItem): ItemContainerProp => {
 
     if (isMovie(item)) {
         return {
