@@ -1,45 +1,40 @@
-// hooks
 import { useContext } from "react";
 import useFetchLocalData from "../../hooks/fetch-data-hooks/useFetchLocalData";
-// context
 import { contentUpdatedContext } from "../../contexts/ContentUpdatedContext";
-// types
-import type { fetchedLocalStorageType } from "../../types/objects";
-// component
-import EachMovieContainer from "../trending/EachMovieContanier";
-import EachPersonContainer from "../trending/EachPersonContainer";
-import EachTvContainer from "../trending/EachTvContainer";
+import { isMovie, type fetchedLocalStorageType, type ItemType } from "../../types/objects";
+import ItemContainer, { type ItemContainerProp } from "../trending/ItemContainer";
 
-
-interface TrendingPageMainContanerProp {
+interface TrendingPageMainContainerProp {
     currentPage: string
 }
 
-export default function TrendingPageItemContaner({ currentPage }: TrendingPageMainContanerProp) {
-    
+const mapItemToItemContainer = (item: ItemType): ItemContainerProp => {
+
+    if (isMovie(item)) {
+        return {
+            src: item.poster_path,
+            rating: item.vote_average,
+            title: item.title
+        }
+    }
+    return {
+        src: item.profile_path,
+        rating: item.popularity,
+        title: item.name
+    }
+
+}
+
+export default function TrendingPageItemContainer({ currentPage }: TrendingPageMainContainerProp) {
+
     const { newDataFetched } = useContext(contentUpdatedContext)
     const fetchedData: fetchedLocalStorageType | null = useFetchLocalData(newDataFetched)
     console.log(fetchedData?.results)
 
     return (
-        <>
-            <div className=" flex-wrap flex m-auto w-5/7 h-max">
-                {fetchedData?.results.map((Item, index: number) => {
-
-                    let componentToRender = null; 
-
-                    if (currentPage === 'movie') {
-                        componentToRender = <EachMovieContainer key={index} item={Item} />;
-                    } else if (currentPage === 'person') {
-                        componentToRender = <EachPersonContainer key={index} item={Item} />;
-                    } else if (currentPage === 'tv') {
-                        componentToRender = <EachTvContainer key={index} item={Item} />;
-                    }
-                    return componentToRender;
-
-                })}
-            </div>
-        </>
+        <div className=" flex-wrap flex m-auto w-5/7 h-max">
+            {fetchedData?.results.map((item, index: number) => <ItemContainer key={`${currentPage}-${index}`} {...mapItemToItemContainer(item)} />)}
+        </div>
 
     )
 }

@@ -6,7 +6,7 @@ import SideBar from "../../components/shared/SideBar";
 import { ContentUpdatedContext } from "../../contexts/ContentUpdatedContext";
 import { LoadingScreenContext } from "../../contexts/LoadingScreenContext";
 import { PageNumberContext } from "../../contexts/PageNumberContext";
-import TrendingPageItemContaner from "../../components/shared/TrendingPageItemContaner";
+import TrendingPageItemContainer from "../../components/shared/TrendingPageItemContaner";
 
 
 export default function TrendingTv() {
@@ -20,7 +20,7 @@ export default function TrendingTv() {
                             <SideBar currentPage='trending' />
                             <HeaderTrending currentPage='tv' />
                             <PageTurner />
-                            <TrendingPageItemContaner currentPage='tv' />
+                            <TrendingPageItemContainer currentPage='tv' />
                             <PageTurner />
                         </LoadingScreen>
 

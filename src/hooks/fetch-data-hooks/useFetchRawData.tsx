@@ -6,7 +6,7 @@ type useFetchRawDataReturn = {
     setTimePeriod: React.Dispatch<React.SetStateAction<string>>,
 
 }
-
+const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
 export default function useFetchRawData(pageNumber: number, setDataFetched: React.Dispatch<React.SetStateAction<number>>, currentPage: string): useFetchRawDataReturn{
     
     const [timePeriod, setTimePeriod] = useState('day');
@@ -18,7 +18,7 @@ export default function useFetchRawData(pageNumber: number, setDataFetched: Reac
                 setIsLoading(!isloading)
                 const rawData: Response = await fetch(`https://api.themoviedb.org/3/trending/${currentPage}/${timePeriod}?page=${pageNumber}?language=en-US`, {
                     headers: {
-                        'Authorization': `Bearer ${import.meta.env.VITE_API_READ_ACCESS_TOKEN}`
+                        'Authorization': `Bearer ${IMDB_API_KEY}`
                     }
 
                 })

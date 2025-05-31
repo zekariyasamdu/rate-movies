@@ -1,11 +1,22 @@
 
 interface fetchedLocalStorageType {
     page: number,
-    results: [],
+    results: ItemType[],
     total_pages: number,
     total_results: number
 
 }
+
+export type ItemType = eachMovieArrayType | eachPersonArrayType 
+
+export const isMovie = (item: ItemType): item is eachMovieArrayType => {
+    return (item as eachMovieArrayType).poster_path !== undefined;
+}
+
+export const isPerson = (item: ItemType): item is eachPersonArrayType => {
+    return (item as eachPersonArrayType).profile_path !== undefined;
+}
+
 
 interface eachMovieArrayType {
     title: string,
@@ -20,14 +31,6 @@ interface eachPersonArrayType {
     popularity: number,
 }
 
-interface eachTvArrayType {
-
-    poster_path: string,
-    name: string,
-    popularity: number,
-}
 
 
-
-
-export type { fetchedLocalStorageType, eachMovieArrayType, eachPersonArrayType, eachTvArrayType }
+export type { fetchedLocalStorageType, eachMovieArrayType, eachPersonArrayType }

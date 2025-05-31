@@ -7,7 +7,7 @@ import SideBar from "../../components/shared/SideBar";
 import { ContentUpdatedContext } from "../../contexts/ContentUpdatedContext";
 import { LoadingScreenContext } from "../../contexts/LoadingScreenContext";
 import { PageNumberContext } from "../../contexts/PageNumberContext";
-import TrendingPageItemContaner from "../../components/shared/TrendingPageItemContaner";
+import TrendingPageItemContainer from "../../components/shared/TrendingPageItemContaner";
 
 
 export default function TrendingMovies() {
@@ -20,9 +20,20 @@ export default function TrendingMovies() {
                         <LoadingScreen>
                             <SideBar currentPage='trending' />
                             <HeaderTrending currentPage='movie' />
-                            <PageTurner />
-                            <TrendingPageItemContaner currentPage='movie' />
-                            <PageTurner />
+                            <div className="flex flex-col items-center justify-center overflow-y-scroll ">
+                                <div className="h-[86vh] w-5/6 mt-18 ">
+                                    <div className="w-1/2 mx-auto">
+                                        <PageTurner />
+                                    </div>
+                                    <TrendingPageItemContainer currentPage='movie' />
+                                    <div className="w-1/2 mx-auto">
+                                        <PageTurner />
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                         </LoadingScreen>
 
 
