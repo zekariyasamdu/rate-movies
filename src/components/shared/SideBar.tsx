@@ -1,66 +1,77 @@
-// fontawsome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faHouse, faMagnifyingGlass, faFireFlameCurved } from "@fortawesome/free-solid-svg-icons";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
-// Hooks
 import useChangeTheme from "../../hooks/style-hooks/useChangeTheme";
-// Roters
 import { Link } from "react-router-dom";
 import useResizeSideBars from "../../hooks/style-hooks/useResizeSideBars";
-
-interface SideBarProps {
-    currentPage: string
-}
+import { useContext } from "react";
+import { siderBarFoucsContext } from "../../contexts/SideBarFocusContext";
 
 
-export default function SideBar({ currentPage }: SideBarProps) {
+export default function SideBar() {
 
-    // Resizing the sidebar
+
     const { widthValue, position, stateOfResizeSideBar, setResizeSideBar } = useResizeSideBars()
+    const { menuItem, setMenuItems } = useContext(siderBarFoucsContext)
+    const { theme, setTheme } = useChangeTheme()
+
+    console.log(menuItem)
+
     function resizeSideBar(): void {
         setResizeSideBar(!stateOfResizeSideBar);
     }
 
-    // toggling between the dark and light themes
-    const { theme, setTheme } = useChangeTheme()
     function toggleBetweenThemes(): void {
         setTheme(!theme)
     }
 
-    // constants 
+    function searchFocus() {
+        setMenuItems('search')
+
+    }
+
+    function homeFocus() {
+        setMenuItems('home')
+    }
+
+    function trendingFocus() {
+        setMenuItems('trending')
+    }
+
+
     const focusedOnStyle: string = 'text-blue-500'
 
     return (
         <div className={`absolute top-20 left-2.5 z-20 ${widthValue} gap-5 rounded-3xl h-100 flex flex-col ${position} bg-L-tertiary dark:bg-D-tertiary`}>
-            {/* Resizing The Sidebar */}
+
             <div className="side-bar-items"
                 onClick={resizeSideBar}
                 title="Sidebar">
                 <FontAwesomeIcon
                     icon={faBars} />
             </div>
-            {/*  Search  */}
-            <div className={`side-bar-items ${currentPage === 'search' ? focusedOnStyle : ''}`}
+
+            <div className={`side-bar-items ${menuItem === 'search' ? focusedOnStyle : ''}`}
                 title="Search">
-                <Link to='/search'>
+                <Link to='/search' onClick={searchFocus}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Link>
             </div>
-            {/* Routes To Homepage */}
-            <div className={`side-bar-items ${currentPage === 'home' ? focusedOnStyle : ''}`}
+
+            <div className={`side-bar-items ${menuItem === 'home' ? focusedOnStyle : ''}`}
                 title="Home Page">
-                <Link to='/'>
+                <Link to='/' onClick={homeFocus}>
                     <FontAwesomeIcon icon={faHouse} />
                 </Link>
             </div>
-            {/* Trending */}
-            <div className={`side-bar-items ${currentPage === 'trending' ? focusedOnStyle : ''}`}
+
+            <div className={`side-bar-items ${menuItem === 'trending' ? focusedOnStyle : ''}`}
                 title="Trending">
-                <Link to='/trending/people' >
+                <Link to='/trending/person' onClick={trendingFocus} >
                     <FontAwesomeIcon icon={faFireFlameCurved} />
                 </Link>
             </div>
-            {/*Dark/Light Theme*/}
+
             <div className="absolute side-bar-items bottom-0"
                 onClick={toggleBetweenThemes}>
                 {!theme ?
@@ -71,7 +82,7 @@ export default function SideBar({ currentPage }: SideBarProps) {
                         title="dark-mode"
                         icon={faMoon} />}
             </div>
-            
+
         </div>
     )
 }

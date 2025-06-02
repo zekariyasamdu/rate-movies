@@ -1,35 +1,16 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-// components 
+import { createBrowserRouter } from "react-router-dom";
+
 import Home from "./pages/HomePage";
 import Search from "./pages/SearchPage";
-import TrendingMovies from "./pages/trending/TrendingMoviesPage";
-import TrendingPeople from "./pages/trending/TrendingPeoplePage";
-import TrendingTv from "./pages/trending/TrendingTvPage";
+import Trending from "./pages/TrendingPage";
 
 
-export default function AppRouters() {
-
-    return (
-        <BrowserRouter>
-            <Routes>
-                <Route path="/"
-                    element={<Home />}
-                />
-                <Route path="/search"
-                    element={<Search/>}
-                />
-
-                {/* thrending routes */}
-                <Route path="/trending/movies"
-                    element={<TrendingMovies/>}
-                />
-                <Route path="/trending/people"
-                    element={<TrendingPeople/>}
-                />
-                <Route path="/trending/tv"
-                    element={<TrendingTv/>}
-                />
-            </Routes>
-        </BrowserRouter>
-    )
-}
+export const router = createBrowserRouter([
+    {path: '/', Component: Home},
+    {path: '/search', Component: Search},
+    {path: '/trending', Component: Trending, 
+        children: [
+            {path: ':spItem'},
+        ]
+    }
+])

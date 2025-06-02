@@ -1,23 +1,21 @@
-type aStatetWithNumber = {
+export type numberState = {
     value: number,
     setterFunc: React.Dispatch<React.SetStateAction<number>>
 }
 
 
-type aStateWithString = {
+export type stringState = {
     value: string,
     setterFunc: React.Dispatch<React.SetStateAction<string>>
 }
 
-type aStateWithBool = {
+export type boolState = {
     value: string,
     setterFunc: React.Dispatch<React.SetStateAction<string>>
 }
 
 
-interface childrenProps {
+export interface childrenType {
     children: React.ReactNode
 }
 
-
-export type {aStateWithBool, aStateWithString, childrenProps, aStatetWithNumber }

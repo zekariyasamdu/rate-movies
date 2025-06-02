@@ -1,11 +1,10 @@
-// types
 import { useContext } from "react";
-import type { childrenProps } from "../../types/general";
-import { loadingScreenContext } from "../../contexts/LoadingScreenContext";
+import type { childrenType } from "../../types/general";
+import { loadingContext } from "../../contexts/LoadingContext";
 
 
-export default function LoadingScreen({ children }: childrenProps) {
-    const { isloading, setIsLoading } = useContext(loadingScreenContext)
+export default function LoadingScreen({ children }: childrenType) {
+    const { isloading } = useContext(loadingContext)
     const style = isloading ? 'w-screen h-screen pointer-none bg-gray opacity-20' : '';
 
     return (

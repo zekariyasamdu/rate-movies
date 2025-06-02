@@ -1,11 +1,17 @@
+import SideBarFocusProvider from "../components/context-provider/SideBarFocusProvider";
 import SideBar from "../components/shared/SideBar";
 
 
 
 export default function Search() {
+    
     return (
         <>
-            <SideBar currentPage='search' />
+            <SideBarFocusProvider>
+
+                <SideBar />
+
+            </SideBarFocusProvider>
         </>
     )
 }

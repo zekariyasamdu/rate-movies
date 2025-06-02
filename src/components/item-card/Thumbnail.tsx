@@ -1,6 +1,8 @@
 
 
-type ThumbnailProps = { src: string, alt: string, opacity?: boolean } & React.ImgHTMLAttributes<HTMLImageElement>
+type ThumbnailProps = { 
+    src: string, alt: string, opacity?: boolean 
+} & React.ImgHTMLAttributes<HTMLImageElement>
 
 export default function Thumbnail({ src, alt, ...props }: ThumbnailProps) {
     return (

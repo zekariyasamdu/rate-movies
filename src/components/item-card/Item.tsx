@@ -7,7 +7,7 @@ export interface ItemContainerProp {
     title: string;
 }
 
-export default function ItemContainer({ src, rating, title }: ItemContainerProp) {
+export default function Item({ src, rating, title }: ItemContainerProp) {
 
 
     return (

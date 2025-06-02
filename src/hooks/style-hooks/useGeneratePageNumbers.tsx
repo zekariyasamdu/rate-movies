@@ -3,9 +3,9 @@
 export default function useGeneratePageNumbers({ pageNumber, lastPage }: { pageNumber: number; lastPage: number | undefined }): (number)[] {
     
     let toBeDisplayedNumbers: (number)[];
-    let currentPage: number = pageNumber;
-    let secondNumber: number = 1 + currentPage;
-    let thired: number = 2 + currentPage;
+    const  currentPage: number = pageNumber;
+    const  secondNumber: number = 1 + currentPage;
+    const  thired: number = 2 + currentPage;
 
     if (typeof (lastPage) === "number") {
         if (currentPage === lastPage) {

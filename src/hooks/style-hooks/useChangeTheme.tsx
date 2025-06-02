@@ -8,7 +8,7 @@ type useChangeThemeReturns= {
 export default function useChangeTheme(): useChangeThemeReturns  {
 
     const [theme, setTheme] = useState(() => {
-        let value: string | null = localStorage.getItem('theme')
+        const value: string | null = localStorage.getItem('theme')
         return value === 'dark' ? false : true;
 
     });
@@ -21,8 +21,8 @@ export default function useChangeTheme(): useChangeThemeReturns  {
         }
 
         localStorage.setItem('theme', 'dark')
-        let value: string | null = localStorage.getItem('theme')
-        value === 'dark' ? document.body.classList.add(value) : null;
+        const  value: string | null = localStorage.getItem('theme')
+        if( value === 'dark') document.body.classList.add(value) 
 
     }, [theme])
 
