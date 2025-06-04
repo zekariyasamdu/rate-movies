@@ -4,18 +4,21 @@ import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import useChangeTheme from "../../hooks/style-hooks/useChangeTheme";
 import { Link } from "react-router-dom";
 import useResizeSideBars from "../../hooks/style-hooks/useResizeSideBars";
+import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 import { useContext } from "react";
-import { siderBarFoucsContext } from "../../contexts/SideBarFocusContext";
+import { timeRangeContext } from "../../contexts/TimeRangeContext";
+import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 
 
 export default function SideBar() {
 
 
     const { widthValue, position, stateOfResizeSideBar, setResizeSideBar } = useResizeSideBars()
-    const { menuItem, setMenuItems } = useContext(siderBarFoucsContext)
-    const { theme, setTheme } = useChangeTheme()
+    const {headerRange} = useContext(timeRangeContext);
+    const {headerItem} = useContext(trendingHeaderFocusContext);
+    const { theme, setTheme } = useChangeTheme();
 
-    console.log(menuItem)
+    
 
     function resizeSideBar(): void {
         setResizeSideBar(!stateOfResizeSideBar);
@@ -25,19 +28,7 @@ export default function SideBar() {
         setTheme(!theme)
     }
 
-    function searchFocus() {
-        setMenuItems('search')
-
-    }
-
-    function homeFocus() {
-        setMenuItems('home')
-    }
-
-    function trendingFocus() {
-        setMenuItems('trending')
-    }
-
+ 
 
     const focusedOnStyle: string = 'text-blue-500'
 
@@ -51,23 +42,23 @@ export default function SideBar() {
                     icon={faBars} />
             </div>
 
-            <div className={`side-bar-items ${menuItem === 'search' ? focusedOnStyle : ''}`}
+            <div className={`side-bar-items ${useCheckLocation('search')? focusedOnStyle : ''}`}
                 title="Search">
-                <Link to='/search' onClick={searchFocus}>
+                <Link to='/search' >
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </Link>
             </div>
 
-            <div className={`side-bar-items ${menuItem === 'home' ? focusedOnStyle : ''}`}
+            <div className={`side-bar-items ${useCheckLocation('home')? focusedOnStyle : ''}`}
                 title="Home Page">
-                <Link to='/' onClick={homeFocus}>
+                <Link to='/home' >
                     <FontAwesomeIcon icon={faHouse} />
                 </Link>
             </div>
 
-            <div className={`side-bar-items ${menuItem === 'trending' ? focusedOnStyle : ''}`}
+            <div className={`side-bar-items ${useCheckLocation('trending') ? focusedOnStyle : ''}`}
                 title="Trending">
-                <Link to='/trending/person' onClick={trendingFocus} >
+                <Link to={`/trending/${headerItem}/${headerRange}`} >
                     <FontAwesomeIcon icon={faFireFlameCurved} />
                 </Link>
             </div>

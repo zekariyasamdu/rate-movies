@@ -2,27 +2,21 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
+import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 
 export default function HeaderTrending() {
-    const { headerItem, setHeaderItem } = useContext(trendingHeaderFocusContext);
-    const { headerRange, setHeaderRange } = useContext(timeRangeContext);
+    const { setHeaderItem } = useContext(trendingHeaderFocusContext);
+    const { headerRange } = useContext(timeRangeContext);
+    const { headerItem } = useContext(trendingHeaderFocusContext);
 
-    function changeTimePeriod() {
-        if (headerRange === "day") {
-            setHeaderRange("week");
-            return;
-        }
-        setHeaderRange("day");
+    function moviesFocus() {
+        setHeaderItem("movie")
     }
-
-    function moviesFocus(){
-        setHeaderItem( "movie")
+    function tvFocus() {
+        setHeaderItem("tv")
     }
-    function tvFocus(){
-        setHeaderItem( "tv")
-    }
-    function personFocus(){
-        setHeaderItem( "person")
+    function personFocus() {
+        setHeaderItem("person")
     }
 
 
@@ -30,27 +24,27 @@ export default function HeaderTrending() {
 
     return (
         <div className="headers">
-            <Link to="/trending/people">
+            <Link to={`/trending/person/${headerRange}`}>
                 <div
-                    className={`headers-items ${headerItem === "person" ? selctedOptionStyle : ""
+                    className={`headers-items ${useCheckLocation('trending/person') ? selctedOptionStyle : ""
                         }`}
                     onClick={personFocus}
                 >
                     People
                 </div>
             </Link>
-            <Link to="/trending/movies">
+            <Link to={`/trending/movie/${headerRange}`}>
                 <div
-                    className={`headers-items ${headerItem === "movie" ? selctedOptionStyle : ""
+                    className={`headers-items ${useCheckLocation('trending/movie') ? selctedOptionStyle : ""
                         }`}
                     onClick={moviesFocus}
                 >
                     Movies
                 </div>
             </Link>
-            <Link to="/trending/tv">
+            <Link to={`/trending/tv/${headerRange}`}>
                 <div
-                    className={`headers-items ${headerItem === "tv" ? selctedOptionStyle : ""
+                    className={`headers-items ${useCheckLocation('trending/tv') ? selctedOptionStyle : ""
                         }`}
                     onClick={tvFocus}
                 >
@@ -58,20 +52,24 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <div
-                className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
-                    }`}
-                onClick={changeTimePeriod}
-            >
-                Days
-            </div>
-            <div
-                className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
-                    }`}
-                onClick={changeTimePeriod}
-            >
-                Weeks
-            </div>
+            <Link to={`/trending/${headerItem}/day`}>
+                <div
+                    className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
+                        }`}
+                >
+                    Days
+                </div>
+            </Link>
+
+            <Link to={`/trending/${headerItem}/week`}>
+
+                <div
+                    className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
+                        }`}
+                >
+                    Weeks
+                </div>
+            </Link>
         </div>
     );
 }

@@ -10,10 +10,10 @@ export default function useFetchItemData(): fetchedType | null {
 
     const [returnData, setReturnData] = useState<fetchedType | null>(null)
     const { setIsLoading } = useContext(loadingContext)
+    const { headerItem } = useContext(trendingHeaderFocusContext)
     const { headerRange } = useContext(timeRangeContext)
     const { pageNumber } = useContext(pageContext)
-    const { headerItem } = useContext(trendingHeaderFocusContext)
-    console.log(headerItem, headerRange)
+    
     useEffect(() => {
 
         const getTrendingMovies = async () => {

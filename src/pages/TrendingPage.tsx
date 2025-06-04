@@ -6,7 +6,6 @@ import SideBar from "../components/shared/SideBar";
 import ItemsContainer from "../components/item-card/ItemsContainer";
 import { LoadingProvider } from "../components/context-provider/LoadingProvider";
 import { PageProvider } from "../components/context-provider/PageProvider";
-import SideBarFocusProvider from "../components/context-provider/SideBarFocusProvider";
 import TimeRangeProvider from "../components/context-provider/TimeRangeProvider";
 import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
 
@@ -16,7 +15,6 @@ export default function Trending() {
         <>
         <LoadingProvider>
             <PageProvider>
-                <SideBarFocusProvider>
                     <TimeRangeProvider>
                         <TrendingHeaderFocusProvider>
 
@@ -38,7 +36,6 @@ export default function Trending() {
 
                         </TrendingHeaderFocusProvider>
                     </TimeRangeProvider>
-                </SideBarFocusProvider>
             </PageProvider>
         </LoadingProvider>
 

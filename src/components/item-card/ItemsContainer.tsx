@@ -22,7 +22,6 @@ const mapItemToItemContainer = (item: ImdbItem): ItemContainerProp => {
 export default function ItemsContainer() {
 
     const fetchedData: fetchedType | null = useFetchItemData();
-    console.log(fetchedData);
     return (
         <div className=" flex-wrap flex m-auto w-5/7 h-max">
             {fetchedData?.results?.map((item : ImdbItem, index: number) => <Item key={index} {...mapItemToItemContainer(item)} />)}

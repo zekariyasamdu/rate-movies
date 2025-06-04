@@ -2,11 +2,13 @@ import SideBar from "../components/shared/SideBar";
 
 
 
-export default function Search() {
-    
+export default function Dashboard() {
     return (
         <>
+
                 <SideBar />
+
+
         </>
     )
 }

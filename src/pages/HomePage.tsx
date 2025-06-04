@@ -1,5 +1,3 @@
-// components
-import SideBarFocusProvider from "../components/context-provider/SideBarFocusProvider";
 import SideBar from "../components/shared/SideBar";
 
 
@@ -7,12 +5,10 @@ import SideBar from "../components/shared/SideBar";
 export default function Home() {
     return (
         <>
-            <SideBarFocusProvider>
 
                 <SideBar />
 
 
-            </SideBarFocusProvider>
         </>
     )
 }
