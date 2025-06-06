@@ -3,20 +3,15 @@ import { Link } from "react-router-dom";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
+import { pageContext } from "../../contexts/PageContext";
 
 export default function HeaderTrending() {
-    const { setHeaderItem } = useContext(trendingHeaderFocusContext);
     const { headerRange } = useContext(timeRangeContext);
     const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { setPageNumber } = useContext(pageContext)
 
-    function moviesFocus() {
-        setHeaderItem("movie")
-    }
-    function tvFocus() {
-        setHeaderItem("tv")
-    }
-    function personFocus() {
-        setHeaderItem("person")
+    function resetPageCount() {
+        setPageNumber(1)
     }
 
 
@@ -24,48 +19,50 @@ export default function HeaderTrending() {
 
     return (
         <div className="headers">
-            <Link to={`/trending/person/${headerRange}`}>
+            <Link to={`/trending/person/${headerRange}/1`}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/person') ? selctedOptionStyle : ""
                         }`}
-                    onClick={personFocus}
+                    onClick={resetPageCount}
                 >
                     People
                 </div>
             </Link>
-            <Link to={`/trending/movie/${headerRange}`}>
+            <Link to={`/trending/movie/${headerRange}/1`}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/movie') ? selctedOptionStyle : ""
                         }`}
-                    onClick={moviesFocus}
+                    onClick={resetPageCount}
                 >
                     Movies
                 </div>
             </Link>
-            <Link to={`/trending/tv/${headerRange}`}>
+            <Link to={`/trending/tv/${headerRange}/1`}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/tv') ? selctedOptionStyle : ""
                         }`}
-                    onClick={tvFocus}
+                    onClick={resetPageCount}
                 >
                     Tv
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/day`}>
+            <Link to={`/trending/${headerItem}/day/1`}>
                 <div
                     className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
                         }`}
+                    onClick={resetPageCount}
                 >
                     Days
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/week`}>
+            <Link to={`/trending/${headerItem}/week/1`}>
 
                 <div
                     className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
                         }`}
+                    onClick={resetPageCount}
                 >
                     Weeks
                 </div>

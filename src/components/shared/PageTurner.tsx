@@ -4,11 +4,16 @@ import { pageContext } from "../../contexts/PageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import useFetchItemData from "../../hooks/fetch-data-hooks/useFetchItemData";
+import { Link } from "react-router-dom";
+import { timeRangeContext } from "../../contexts/TimeRangeContext";
+import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 
 export default function PageTurner() {
-
-    const { pageNumber, setPageNumber } = useContext(pageContext);
     const fetchedData = useFetchItemData();
+    const { pageNumber, setPageNumber } = useContext(pageContext);
+    const { headerRange } = useContext(timeRangeContext);
+    const { headerItem } = useContext(trendingHeaderFocusContext);
+
     const lastPage: number | undefined = fetchedData?.total_pages;
     const toBeRenderedNumbers: number[] = useGeneratePageNumbers({
         pageNumber,
@@ -33,10 +38,13 @@ export default function PageTurner() {
                 {" "}
                 <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>
             </button>
+
             {toBeRenderedNumbers.map((n, i) => (
-                <button className="page-turner" key={i} onClick={() => changePage(n)}>
-                    {n.toString()}
-                </button>
+                <Link to={`/trending/${headerItem}/${headerRange}/${n}`}>
+                    <button className="page-turner" key={i} onClick={() => changePage(n)}>
+                        {n.toString()}
+                    </button>
+                </Link>
             ))}
             <button className="page-turner" onClick={goToNextPage}>
                 <FontAwesomeIcon icon={faArrowRight}></FontAwesomeIcon>

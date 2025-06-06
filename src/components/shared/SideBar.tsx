@@ -9,7 +9,6 @@ import { useContext } from "react";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 
-
 export default function SideBar() {
 
 
@@ -58,7 +57,7 @@ export default function SideBar() {
 
             <div className={`side-bar-items ${useCheckLocation('trending') ? focusedOnStyle : ''}`}
                 title="Trending">
-                <Link to={`/trending/${headerItem}/${headerRange}`} >
+                <Link to={`/trending/${headerItem}/${headerRange}/1`} >
                     <FontAwesomeIcon icon={faFireFlameCurved} />
                 </Link>
             </div>
