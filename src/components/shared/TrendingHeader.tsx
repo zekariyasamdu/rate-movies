@@ -6,12 +6,30 @@ import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 import { pageContext } from "../../contexts/PageContext";
 
 export default function HeaderTrending() {
-    const { headerRange } = useContext(timeRangeContext);
-    const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { headerRange, setHeaderRange } = useContext(timeRangeContext);
+    const { headerItem, setHeaderItem } = useContext(trendingHeaderFocusContext);
     const { setPageNumber } = useContext(pageContext)
 
     function resetPageCount() {
         setPageNumber(1)
+    }
+
+    function loadMovies() {
+        setHeaderItem('movie')
+    }
+    function loadTv() {
+        setHeaderItem('tv')
+    }
+    function loadPerson() {
+        setHeaderItem('person')
+    }
+
+    function loadDay(){
+        setHeaderRange('day')
+    }
+
+    function loadWeek(){
+        setHeaderRange('week')
     }
 
 
@@ -19,7 +37,8 @@ export default function HeaderTrending() {
 
     return (
         <div className="headers">
-            <Link to={`/trending/person/${headerRange}/1`}>
+            <Link to={`/trending/person/${headerRange}/1`}
+                onClick={loadPerson}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/person') ? selctedOptionStyle : ""
                         }`}
@@ -28,7 +47,8 @@ export default function HeaderTrending() {
                     People
                 </div>
             </Link>
-            <Link to={`/trending/movie/${headerRange}/1`}>
+            <Link to={`/trending/movie/${headerRange}/1`}
+                onClick={loadMovies}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/movie') ? selctedOptionStyle : ""
                         }`}
@@ -37,7 +57,8 @@ export default function HeaderTrending() {
                     Movies
                 </div>
             </Link>
-            <Link to={`/trending/tv/${headerRange}/1`}>
+            <Link to={`/trending/tv/${headerRange}/1`}
+                onClick={loadTv}>
                 <div
                     className={`headers-items ${useCheckLocation('trending/tv') ? selctedOptionStyle : ""
                         }`}
@@ -47,7 +68,8 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/day/1`}>
+            <Link to={`/trending/${headerItem}/day/1`} 
+            onClick={loadDay}>
                 <div
                     className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
                         }`}
@@ -57,7 +79,8 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/week/1`}>
+            <Link to={`/trending/${headerItem}/week/1`} 
+            onClick={loadWeek}>
 
                 <div
                     className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
