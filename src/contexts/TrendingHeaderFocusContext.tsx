@@ -6,6 +6,6 @@ type TrendingHeaderFocusContext = {
 }
 
 export const trendingHeaderFocusContext = createContext<TrendingHeaderFocusContext>({
-    headerItem: 'person',
+    headerItem: 'movie',
     setHeaderItem: () =>{}
 });

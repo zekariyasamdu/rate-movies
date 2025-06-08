@@ -13,6 +13,7 @@ export default function useFetchItemData(): fetchedType | null {
     const { headerItem } = useContext(trendingHeaderFocusContext)
     const { headerRange } = useContext(timeRangeContext)
     const { pageNumber } = useContext(pageContext)
+    console.log(returnData)
     
     useEffect(() => {
 
@@ -29,7 +30,7 @@ export default function useFetchItemData(): fetchedType | null {
                 setReturnData(dataJson)
             } catch (e) {
                 console.error(e)
-            }finally{
+            } finally {
                 setIsLoading(false)
             }
         }

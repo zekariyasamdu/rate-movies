@@ -40,7 +40,7 @@ export default function PageTurner() {
             </button>
 
             {toBeRenderedNumbers.map((n, i) => (
-                <Link to={`/trending/${headerItem}/${headerRange}/${n}`}>
+                <Link key={i} to={`/trending/${headerItem}/${headerRange}/${n}`}>
                     <button className="page-turner" key={i} onClick={() => changePage(n)}>
                         {n.toString()}
                     </button>

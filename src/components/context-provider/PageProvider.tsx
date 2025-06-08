@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom"
 
 export function PageProvider({children}: childrenType ){
     const params: number = Number(useParams().page) || 1;
-    
     const [pageNumber, setPageNumber] = useState(params)
 
     return(

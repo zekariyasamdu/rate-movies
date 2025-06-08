@@ -1,6 +1,7 @@
 
 
 export interface IMovie {
+    id:string,
     title: string,
     backdrop_path: string,
     poster_path: string,
@@ -8,6 +9,7 @@ export interface IMovie {
 }
 
 export interface IPerson {
+    id:string,
     profile_path: string,
     name: string,
     popularity: number,

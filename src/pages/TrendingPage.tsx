@@ -1,5 +1,4 @@
 import HeaderTrending from "../components/shared/TrendingHeader";
-import LoadingScreen from "../components/shared/LoadingScreen";
 import PageTurner from "../components/shared/PageTurner";
 import SideBar from "../components/shared/SideBar";
 
@@ -13,33 +12,32 @@ import TrendingHeaderFocusProvider from "../components/context-provider/Trending
 export default function Trending() {
     return (
         <>
-        <LoadingProvider>
-            <PageProvider>
+            <LoadingProvider>
+                <PageProvider>
                     <TimeRangeProvider>
                         <TrendingHeaderFocusProvider>
 
-                            <LoadingScreen>
+
                             <SideBar />
-                            <HeaderTrending/>
+                            <HeaderTrending />
                             <div className="flex flex-col items-center justify-center overflow-y-scroll ">
                                 <div className="h-[86vh] w-5/6 mt-18 ">
-                                    
+
                                     <PageTurner />
-                                    <ItemsContainer />
+                                        <ItemsContainer />
                                     <PageTurner />
-                                    
+
                                 </div>
 
                             </div>
-                        </LoadingScreen>
 
 
                         </TrendingHeaderFocusProvider>
                     </TimeRangeProvider>
-            </PageProvider>
-        </LoadingProvider>
+                </PageProvider>
+            </LoadingProvider>
 
-                        
+
 
         </>
     )
