@@ -1,7 +1,7 @@
 
 
 type TitleType = {
-    titles: string | undefined
+    title: string | undefined
 } & React.HTMLAttributes<HTMLImageElement>
 
 
