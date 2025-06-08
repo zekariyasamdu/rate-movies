@@ -9,8 +9,8 @@ Features
 
 # Technologies Used
 
-  Frontend: React.js
-  API: IMDb API
+  Frontend: React.js, Typescript and Tailwind
+  API: TMDb API
 
 # Getting Started
 
@@ -35,7 +35,7 @@ Bash
 
 This project uses an external API to fetch movie data. It is crucial to set up your API key securely.
 
-  Obtain an API Key: from IMDB API
+  Obtain an API Key: from TMDB API
       
   Create a .env file:
 
@@ -45,4 +45,4 @@ This project uses an external API to fetch movie data. It is crucial to set up y
 
   Add the following line to your .env file, replacing YOUR_IMDB_API_KEY with the actual key you obtained:
 
-    REACT_APP_IMDB_API_KEY=YOUR_IMDB_API_KEY
+    VITE_API_READ_ACCESS_TOKEN= `${YOUR_TMDB_API_KEY}`

@@ -7,7 +7,7 @@ interface fetchedMovieDataType {
     title: string,
     overview: string,
     backdrop_path: string,
-    genres:  [],
+    genres: [],
     release_date: string,
     adult: boolean,
     homepage: string,
@@ -19,8 +19,7 @@ export default function useFetchMovieData(): fetchedMovieDataType | null {
     const [movieData, setMovieData] = useState<fetchedMovieDataType | null>(null);
     const { id } = useContext(specificIdContext);
     const { headerItem } = useContext(trendingHeaderFocusContext);
-    console.log(headerItem)
-    console.log(movieData)
+
 
     useEffect(() => {
         const fetchMovieData = async () => {
@@ -40,5 +39,7 @@ export default function useFetchMovieData(): fetchedMovieDataType | null {
         }
         fetchMovieData();
     }, [setMovieData, id, headerItem])
+
+    console.log(movieData)
     return movieData
 }

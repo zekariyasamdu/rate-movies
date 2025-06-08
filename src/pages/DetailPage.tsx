@@ -1,16 +1,21 @@
-import BackDrop from "../components/movie-detail/BackDrop";
+
 import SpecificIdProvider from "../components/context-provider/SpecificIdProvider";
 import SideBar from "../components/shared/SideBar";
 import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
+import DetailContainer from "../components/movie-detail/DetailContainer";
 
 
 
-export default function Movie() {
+export default function Detail() {
     return (
         <TrendingHeaderFocusProvider>
             <SpecificIdProvider>
-                <BackDrop />
-                <SideBar />
+                
+
+                    <DetailContainer />
+                    <SideBar />
+                
+
             </SpecificIdProvider>
         </TrendingHeaderFocusProvider>
 
