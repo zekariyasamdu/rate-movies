@@ -24,6 +24,26 @@ export interface fetchedType {
 
 }
 
+interface videoObject {
+    results : videoID[]
+}
+
+interface videoID {
+    key: string
+}
+
+export interface fetchedMovieType {
+    title: string,
+    overview: string,
+    backdrop_path: string,
+    genres: [],
+    release_date: string,
+    adult: boolean,
+    homepage: string,
+    videos: videoObject
+}
+
+
 export type ImdbItem = IMovie | IPerson;
 
 export const isMovie = (item: ImdbItem): item is IMovie => {

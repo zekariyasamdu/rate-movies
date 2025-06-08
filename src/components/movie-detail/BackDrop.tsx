@@ -2,16 +2,12 @@
 
 type BackDropType = {
     src: string | undefined
-}
+} & React.HTMLAttributes<HTMLImageElement>
 
-export default function BackDrop({ src }: BackDropType) {
+export default function BackDrop({ src, ...props }: BackDropType) {
 
 
     return (
-        <div className="max-w max-h rounded-2xl">
-
-            <img className="h-max w-max rounded-3xl" src={`https://image.tmdb.org/t/p/w1280${src}`} />
-
-        </div>
+            <img {...props}  src={`https://image.tmdb.org/t/p/w1280${src}`} />
     )
 }

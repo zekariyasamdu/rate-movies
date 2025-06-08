@@ -1,22 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { specificIdContext } from "../../contexts/SpecificIdContext";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import type { fetchedMovieType } from "../../types/items";
 
 
-interface fetchedMovieDataType {
-    title: string,
-    overview: string,
-    backdrop_path: string,
-    genres: [],
-    release_date: string,
-    adult: boolean,
-    homepage: string,
-    videos: object
-}
+
 
 const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
-export default function useFetchMovieData(): fetchedMovieDataType | null {
-    const [movieData, setMovieData] = useState<fetchedMovieDataType | null>(null);
+export default function useFetchMovieData(): fetchedMovieType | null {
+    const [movieData, setMovieData] = useState<fetchedMovieType | null>(null);
     const { id } = useContext(specificIdContext);
     const { headerItem } = useContext(trendingHeaderFocusContext);
 
@@ -31,7 +23,7 @@ export default function useFetchMovieData(): fetchedMovieDataType | null {
                     }
                 }
                 )
-                const data: fetchedMovieDataType | null = await rawData.json();
+                const data: fetchedMovieType | null = await rawData.json();
                 setMovieData(data);
             } catch (e) {
                 console.error(Error, e);
