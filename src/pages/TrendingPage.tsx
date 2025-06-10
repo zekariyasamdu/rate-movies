@@ -1,12 +1,19 @@
 import HeaderTrending from "../components/shared/TrendingHeader";
 import PageTurner from "../components/shared/PageTurner";
-import SideBar from "../components/shared/SideBar";
+import SideBar from "../components/shared/NavBar";
 
 import ItemsContainer from "../components/item-card/ItemsContainer";
 import { LoadingProvider } from "../components/context-provider/LoadingProvider";
 import { PageProvider } from "../components/context-provider/PageProvider";
 import TimeRangeProvider from "../components/context-provider/TimeRangeProvider";
 import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
+import RootLayout from "../components/layouts/RootLayout";
+import Navbar from "../components/shared/NavBar";
+import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
+import FooterLayout from "../components/layouts/FooterLayout";
+import HeaderLayout from "../components/layouts/HeaderLayout";
+import MainLayout from "../components/layouts/MainLayout";
+import SideLayout from "../components/layouts/SideLayout";
 
 
 export default function Trending() {
@@ -18,18 +25,30 @@ export default function Trending() {
                         <TrendingHeaderFocusProvider>
 
 
-                            <SideBar />
-                            <HeaderTrending />
-                            <div className="flex flex-col items-center justify-center overflow-y-scroll ">
-                                <div className="h-[86vh] w-5/6 mt-18 ">
+                            <RootLayout>
+                                <SideLayout>
+                                    <Navbar />
+                                </SideLayout>
 
-                                    <PageTurner />
+                                <MainLayout>
+                                    <HeaderLayout>
+                                        <HeaderTrending />
+                                    </HeaderLayout>
+
+                                    <ContaintDisplayLayout>
+
                                         <ItemsContainer />
-                                    <PageTurner />
 
-                                </div>
 
-                            </div>
+                                    </ContaintDisplayLayout>
+
+                                    <FooterLayout>
+
+                                        <PageTurner />
+                                    </FooterLayout>
+                                </MainLayout>
+
+                            </RootLayout>
 
 
                         </TrendingHeaderFocusProvider>

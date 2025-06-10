@@ -1,6 +1,6 @@
 
 import SpecificIdProvider from "../components/context-provider/SpecificIdProvider";
-import SideBar from "../components/shared/SideBar";
+import SideBar from "../components/shared/NavBar";
 import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
 import DetailContainer from "../components/movie-detail/DetailContainer";
 

@@ -15,7 +15,7 @@ const mapItemToItemContainer = (item: ImdbItem): ItemContainerProp => {
         }
     }
     return {
-        id:  item.id,
+        id: item.id,
         src: item.profile_path,
         rating: item.popularity,
         title: item.name
@@ -26,10 +26,9 @@ export default function ItemsContainer() {
 
     const fetchedData: fetchedType | null = useFetchItemData();
     return (
-        <LoadingScreen className="flex-wrap  flex-row flex m-auto w-5/7 h-[1935px]">
-                {fetchedData?.results?.map((item: ImdbItem, index: number) => <Item key={index} {...mapItemToItemContainer(item)} />)}  
-        </LoadingScreen>
-
+            <LoadingScreen className="flex-wrap flex-row flex justify-center w-5/7 h-[100%] ">
+                {fetchedData?.results?.map((item: ImdbItem, index: number) => <Item key={index} {...mapItemToItemContainer(item)} />)}
+            </LoadingScreen>
     )
 }
 
