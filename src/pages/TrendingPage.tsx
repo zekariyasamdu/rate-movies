@@ -1,7 +1,5 @@
 import HeaderTrending from "../components/shared/TrendingHeader";
 import PageTurner from "../components/shared/PageTurner";
-import SideBar from "../components/shared/NavBar";
-
 import ItemsContainer from "../components/item-card/ItemsContainer";
 import { LoadingProvider } from "../components/context-provider/LoadingProvider";
 import { PageProvider } from "../components/context-provider/PageProvider";
@@ -33,6 +31,7 @@ export default function Trending() {
                                 <MainLayout>
                                     <HeaderLayout>
                                         <HeaderTrending />
+
                                     </HeaderLayout>
 
                                     <ContaintDisplayLayout>

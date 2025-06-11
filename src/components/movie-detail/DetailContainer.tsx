@@ -11,7 +11,7 @@ export default function DetailContainer() {
     const movieData = useFetchMovieData()
 
     return (
-        <div className="relative w-max  h-max m-auto mt-10 inline-block">
+        <div className="relative w-max h-max m-auto mt-10 ">
             <BackDrop className=" max-w max-h rounded-3xl" src={movieData?.backdrop_path} />
             <div className="absolute flex flex-col gap-5 bottom-20 left-5">
                 <Tags></Tags>

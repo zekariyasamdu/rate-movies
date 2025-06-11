@@ -14,7 +14,7 @@ export default function Themes() {
     }
 
     return (
-        <div className="absolute side-bar-items bottom-0"
+        <div className="side-bar-items"
             onClick={toggleBetweenThemes}>
             {theme ?
                 <FontAwesomeIcon

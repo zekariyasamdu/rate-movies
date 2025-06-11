@@ -32,8 +32,10 @@ export default function PageTurner() {
     }
 
     return (
-        <div className="mx-auto w-1/2 flex gap-3 p-2 justify-between rounded-2xl  mb-15  text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
-            title="pages">
+        <div
+            className="absolute top-4 left-1/2 -translate-x-1/2 w-1/2 flex gap-3 p-2 justify-between rounded-2xl mb-15 text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
+            title="pages"
+        >
             <button className="page-turner" onClick={goToPreviousPage}>
                 {" "}
                 <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon>

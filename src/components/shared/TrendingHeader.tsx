@@ -4,6 +4,7 @@ import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusCo
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 import { pageContext } from "../../contexts/PageContext";
+import Themes from "./Themes";
 
 export default function HeaderTrending() {
     const { headerRange, setHeaderRange } = useContext(timeRangeContext);
@@ -24,11 +25,11 @@ export default function HeaderTrending() {
         setHeaderItem('person')
     }
 
-    function loadDay(){
+    function loadDay() {
         setHeaderRange('day')
     }
 
-    function loadWeek(){
+    function loadWeek() {
         setHeaderRange('week')
     }
 
@@ -68,8 +69,8 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/day/1`} 
-            onClick={loadDay}>
+            <Link to={`/trending/${headerItem}/day/1`}
+                onClick={loadDay}>
                 <div
                     className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
                         }`}
@@ -79,8 +80,8 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/week/1`} 
-            onClick={loadWeek}>
+            <Link to={`/trending/${headerItem}/week/1`}
+                onClick={loadWeek}>
 
                 <div
                     className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
@@ -90,6 +91,7 @@ export default function HeaderTrending() {
                     Weeks
                 </div>
             </Link>
+            <Themes />
         </div>
     );
 }
