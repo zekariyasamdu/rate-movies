@@ -13,8 +13,7 @@ export default function useFetchItemData(): fetchedType | null {
     const { headerItem } = useContext(trendingHeaderFocusContext)
     const { headerRange } = useContext(timeRangeContext)
     const { pageNumber } = useContext(pageContext)
-    console.log(returnData)
-    
+
     useEffect(() => {
 
         const getTrendingMovies = async () => {

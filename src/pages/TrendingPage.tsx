@@ -12,6 +12,7 @@ import FooterLayout from "../components/layouts/FooterLayout";
 import HeaderLayout from "../components/layouts/HeaderLayout";
 import MainLayout from "../components/layouts/MainLayout";
 import SideLayout from "../components/layouts/SideLayout";
+import TimePeriod from "../components/shared/TimePeriod";
 
 
 export default function Trending() {
@@ -31,7 +32,7 @@ export default function Trending() {
                                 <MainLayout>
                                     <HeaderLayout>
                                         <HeaderTrending />
-
+                                        <TimePeriod/>
                                     </HeaderLayout>
 
                                     <ContaintDisplayLayout>

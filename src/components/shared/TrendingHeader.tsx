@@ -5,8 +5,8 @@ import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 import { pageContext } from "../../contexts/PageContext";
 export default function HeaderTrending() {
-    const { headerRange, setHeaderRange } = useContext(timeRangeContext);
-    const { headerItem, setHeaderItem } = useContext(trendingHeaderFocusContext);
+    const { headerRange, } = useContext(timeRangeContext);
+    const { setHeaderItem } = useContext(trendingHeaderFocusContext);
     const { setPageNumber } = useContext(pageContext)
 
     function resetPageCount() {
@@ -18,14 +18,6 @@ export default function HeaderTrending() {
     }
     function loadTv() {
         setHeaderItem('tv')
-    }
-
-    function loadDay() {
-        setHeaderRange('day')
-    }
-
-    function loadWeek() {
-        setHeaderRange('week')
     }
 
 
@@ -54,28 +46,6 @@ export default function HeaderTrending() {
                 </div>
             </Link>
 
-            <Link to={`/trending/${headerItem}/day/1`}
-                onClick={loadDay}>
-                <div
-                    className={`headers-items ${headerRange === "day" ? selctedOptionStyle : ""
-                        }`}
-                    onClick={resetPageCount}
-                >
-                    Days
-                </div>
-            </Link>
-
-            <Link to={`/trending/${headerItem}/week/1`}
-                onClick={loadWeek}>
-
-                <div
-                    className={`headers-items ${headerRange === "week" ? selctedOptionStyle : ""
-                        }`}
-                    onClick={resetPageCount}
-                >
-                    Weeks
-                </div>
-            </Link>
         </div>
     );
 }
