@@ -1,4 +1,3 @@
-import HeaderTrending from "../components/shared/TrendingHeader";
 import PageTurner from "../components/shared/PageTurner";
 import ItemsContainer from "../components/item-card/ItemsContainer";
 import { LoadingProvider } from "../components/context-provider/LoadingProvider";
@@ -13,6 +12,7 @@ import HeaderLayout from "../components/layouts/HeaderLayout";
 import MainLayout from "../components/layouts/MainLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import TimePeriod from "../components/shared/TimePeriod";
+import MediaType from "../components/shared/MediaType";
 
 
 export default function Trending() {
@@ -31,8 +31,8 @@ export default function Trending() {
 
                                 <MainLayout>
                                     <HeaderLayout>
-                                        <HeaderTrending />
                                         <TimePeriod/>
+                                        <MediaType />
                                     </HeaderLayout>
 
                                     <ContaintDisplayLayout>
