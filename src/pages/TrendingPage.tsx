@@ -38,12 +38,12 @@ export default function Trending() {
 
                                         <ItemsContainer />
 
-
                                     </ContaintDisplayLayout>
 
                                     <FooterLayout>
 
                                         <PageTurner />
+                                        
                                     </FooterLayout>
                                 </MainLayout>
 

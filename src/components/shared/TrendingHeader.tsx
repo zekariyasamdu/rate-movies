@@ -4,8 +4,6 @@ import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusCo
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { useCheckLocation } from "../../hooks/route-hooks/useExtractLocation";
 import { pageContext } from "../../contexts/PageContext";
-import Themes from "./Themes";
-
 export default function HeaderTrending() {
     const { headerRange, setHeaderRange } = useContext(timeRangeContext);
     const { headerItem, setHeaderItem } = useContext(trendingHeaderFocusContext);
@@ -21,9 +19,6 @@ export default function HeaderTrending() {
     function loadTv() {
         setHeaderItem('tv')
     }
-    function loadPerson() {
-        setHeaderItem('person')
-    }
 
     function loadDay() {
         setHeaderRange('day')
@@ -38,16 +33,6 @@ export default function HeaderTrending() {
 
     return (
         <div className="headers">
-            <Link to={`/trending/person/${headerRange}/1`}
-                onClick={loadPerson}>
-                <div
-                    className={`headers-items ${useCheckLocation('trending/person') ? selctedOptionStyle : ""
-                        }`}
-                    onClick={resetPageCount}
-                >
-                    People
-                </div>
-            </Link>
             <Link to={`/trending/movie/${headerRange}/1`}
                 onClick={loadMovies}>
                 <div
@@ -91,7 +76,6 @@ export default function HeaderTrending() {
                     Weeks
                 </div>
             </Link>
-            <Themes />
         </div>
     );
 }

@@ -1,7 +1,7 @@
 import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import useChangeTheme from "../../hooks/style-hooks/useChangeTheme";
+import useChangeTheme from "../../../hooks/style-hooks/useChangeTheme";
 
 
 export default function Themes() {
