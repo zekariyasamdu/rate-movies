@@ -13,6 +13,7 @@ import MainLayout from "../components/layouts/MainLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import TimePeriod from "../components/shared/TimePeriod";
 import MediaType from "../components/shared/MediaType";
+import SearchInput from "../components/shared/SearchInput";
 
 
 export default function Trending() {
@@ -32,6 +33,7 @@ export default function Trending() {
                                 <MainLayout>
                                     <HeaderLayout>
                                         <TimePeriod/>
+                                        <SearchInput/>
                                         <MediaType />
                                     </HeaderLayout>
 

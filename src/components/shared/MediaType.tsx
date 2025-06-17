@@ -28,13 +28,13 @@ function MediaType() {
 
     return (
         <div>
-            <select value={`/trending/${headerItem}/${headerRange}/1`}  onChange={(e) => setPeriod(e)}>
+            <select className="text-[16px] p-2 border-2 rounded-2xl" value={`/trending/${headerItem}/${headerRange}/1`}  onChange={(e) => setPeriod(e)}>
                 <option value={`/trending/movie/${headerRange}/1`} onClick={loadMovie}>
-                    movie
+                    Movie
                 </option>
 
                 <option value={`/trending/tv/${headerRange}/1`} onClick={loadTv}>
-                    tv
+                    Tv
                 </option>
             </select>
         </div>
