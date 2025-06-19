@@ -1,9 +1,5 @@
 import PageTurner from "../components/shared/PageTurner";
 import ItemsContainer from "../components/item-card/ItemsContainer";
-import { LoadingProvider } from "../components/context-provider/LoadingProvider";
-import { PageProvider } from "../components/context-provider/PageProvider";
-import TimeRangeProvider from "../components/context-provider/TimeRangeProvider";
-import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
 import RootLayout from "../components/layouts/RootLayout";
 import Navbar from "../components/shared/NavBar";
 import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
@@ -14,15 +10,15 @@ import SideLayout from "../components/layouts/SideLayout";
 import TimePeriod from "../components/shared/TimePeriod";
 import MediaType from "../components/shared/MediaType";
 import SearchInput from "../components/shared/SearchInput";
+import useFetchItemData from "../hooks/fetch-data-hooks/useFetchItemData";
+import type { IFetchedType } from "../types/items";
 
 
 export default function Trending() {
+    const fetchedData: IFetchedType | null = useFetchItemData();
     return (
         <>
-            <LoadingProvider>
-                <PageProvider>
-                    <TimeRangeProvider>
-                        <TrendingHeaderFocusProvider>
+            
 
 
                             <RootLayout>
@@ -39,24 +35,19 @@ export default function Trending() {
 
                                     <ContaintDisplayLayout>
 
-                                        <ItemsContainer />
+                                        <ItemsContainer data={fetchedData} />
 
                                     </ContaintDisplayLayout>
 
                                     <FooterLayout>
 
-                                        <PageTurner />
+                                        <PageTurner totalPages={fetchedData?.total_pages} />
                                         
                                     </FooterLayout>
                                 </MainLayout>
 
                             </RootLayout>
 
-
-                        </TrendingHeaderFocusProvider>
-                    </TimeRangeProvider>
-                </PageProvider>
-            </LoadingProvider>
 
 
 

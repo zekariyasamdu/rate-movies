@@ -16,7 +16,7 @@ export interface IPerson {
 }
 
 
-export interface fetchedType {
+export interface IFetchedType {
     page: number,
     results: ImdbItem[],
     total_pages: number,

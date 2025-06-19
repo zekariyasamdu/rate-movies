@@ -1,15 +1,15 @@
 import { useContext } from "react"
-import useSearchData from "../../hooks/fetch-data-hooks/useSearchData";
 import { useNavigate } from "react-router-dom";
 import { queryContext } from "../../contexts/QueryContext";
+import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
 
 function SearchInput() {
-  
-  const nav = useNavigate()
-  const {query, setQuery}= useContext(queryContext);
 
-  const searchData = useSearchData();
-  console.log(searchData);
+  const nav = useNavigate()
+  const { query, setQuery } = useContext(queryContext);
+  const { headerItem } = useContext(trendingHeaderFocusContext);
+
+
 
   function getValue(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.value.trim() !== '') {
@@ -19,7 +19,7 @@ function SearchInput() {
 
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && query.trim() !== '') {
-      nav(`/search/${query}`)
+      nav(`/search/${headerItem}/${query}/1`)
     }
   });
 

@@ -1,6 +1,5 @@
-import { isMovie, type fetchedType, type ImdbItem } from "../../types/items";
+import { isMovie, type IFetchedType, type ImdbItem } from "../../types/items";
 import Item, { type ItemContainerProp } from "./Item";
-import useFetchItemData from "../../hooks/fetch-data-hooks/useFetchItemData";
 import LoadingScreen from "../shared/LoadingScreen";
 
 
@@ -22,12 +21,16 @@ const mapItemToItemContainer = (item: ImdbItem): ItemContainerProp => {
     }
 
 }
-export default function ItemsContainer() {
 
-    const fetchedData: fetchedType | null = useFetchItemData();
+type ItemsContainerProp = {
+    data : IFetchedType | null
+}
+
+export default function ItemsContainer({data} : ItemsContainerProp ) {
+
     return (
             <LoadingScreen className="flex-wrap flex-row flex justify-center w-6/7 h-[100%] ">
-                {fetchedData?.results?.map((item: ImdbItem, index: number) => <Item key={index} {...mapItemToItemContainer(item)} />)}
+                {data?.results?.map((item: ImdbItem, index: number) => <Item key={index} {...mapItemToItemContainer(item)} />)}
             </LoadingScreen>
     )
 }

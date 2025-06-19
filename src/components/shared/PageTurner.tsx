@@ -2,30 +2,40 @@ import { useContext } from "react";
 import { pageContext } from "../../contexts/PageContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import useFetchItemData from "../../hooks/fetch-data-hooks/useFetchItemData";
 import { useNavigate } from "react-router-dom";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import { navBarContext } from "../../contexts/NavBarContext";
+import { queryContext } from "../../contexts/QueryContext";
 
-export default function PageTurner() {
-    const fetchedData = useFetchItemData();
+
+type PageTurnerProps = {
+    totalPages : number | undefined
+}
+
+export default function PageTurner({totalPages}: PageTurnerProps ) {
+
     const nav = useNavigate();
     const { pageNumber, setPageNumber } = useContext(pageContext);
     const { headerRange } = useContext(timeRangeContext);
     const { headerItem } = useContext(trendingHeaderFocusContext);
+    const {query}  = useContext(queryContext)
+    const {bar} = useContext(navBarContext)
+    
 
-    const lastPage: number | undefined = fetchedData?.total_pages;
+
+    const lastPage: number | undefined = totalPages;
     function goToPreviousPage(): void {
         if (pageNumber - 1 > 0) {
             setPageNumber((p) => p - 1);
-            nav(`/trending/${headerItem}/${headerRange}/${pageNumber - 1}`);
+            nav(`/${bar}/${headerItem}/${headerRange}/${pageNumber - 1}`);
         }
     }
 
     function goToNextPage(): void {
         if (lastPage && pageNumber + 1 < lastPage) {
             setPageNumber((p) => p + 1);
-            nav(`/trending/${headerItem}/${headerRange}/${pageNumber + 1}`);
+            nav(`/${bar}/${headerItem}/${headerRange}/${pageNumber + 1}`);
         }
     }
 

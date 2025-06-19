@@ -3,16 +3,17 @@ import { loadingContext } from "../../contexts/LoadingContext";
 import { pageContext } from "../../contexts/PageContext";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
 import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
-import type { fetchedType } from "../../types/items";
+import type { IFetchedType } from "../../types/items";
 
 const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
-export default function useFetchItemData(): fetchedType | null {
+export default function useFetchItemData(): IFetchedType | null {
 
-    const [returnData, setReturnData] = useState<fetchedType | null>(null)
+    const [returnData, setReturnData] = useState<IFetchedType | null>(null)
     const { setIsLoading } = useContext(loadingContext)
     const { headerItem } = useContext(trendingHeaderFocusContext)
     const { headerRange } = useContext(timeRangeContext)
     const { pageNumber } = useContext(pageContext)
+    
 
     useEffect(() => {
 
@@ -25,7 +26,7 @@ export default function useFetchItemData(): fetchedType | null {
                         'Authorization': `Bearer ${IMDB_API_KEY}`
                     }
                 })
-                const dataJson: fetchedType | null = await rawData.json()
+                const dataJson: IFetchedType | null = await rawData.json()
                 setReturnData(dataJson)
             } catch (e) {
                 console.error(e)

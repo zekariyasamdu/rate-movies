@@ -1,23 +1,33 @@
 import { createBrowserRouter } from "react-router-dom";
-
 import Home from "./pages/HomePage";
-import Search from "./pages/SearchPage";
-import Trending from "./pages/TrendingPage";
 import Dashboard from "./pages/DashboardPage";
 import Detail from "./pages/DetailPage";
+import TrendingPageProviders from "./pages/TrendingPageProviders";
+import SearchPageProviders from "./pages/SearchPageProviders";
 
 
 export const router = createBrowserRouter([
     { path: '/', Component: Dashboard },
     { path: '/home', Component: Home },
-    { path: '/search', Component: Search,
-        children : [
-            {path: ':query',
-            }
+    { path: '/search', Component: SearchPageProviders,
+        children: [
+            {
+                path: ':spItem',
+                children: [
+                    {
+                        path: ':query',
+                        children: [
+                            {
+                                path: ':page'
+                            }
+                        ]
+                    }
+                ]
+            },
         ]
     },
     {
-        path: '/trending', Component: Trending,
+        path: '/trending', Component: TrendingPageProviders,
         children: [
             {
                 path: ':spItem',

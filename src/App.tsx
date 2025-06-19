@@ -7,7 +7,7 @@ function App() {
 
   return (
     <QueryProvider>
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
     </QueryProvider>
   )
 }
