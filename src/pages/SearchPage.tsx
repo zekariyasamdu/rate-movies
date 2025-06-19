@@ -4,8 +4,9 @@ import HeaderLayout from "../components/layouts/HeaderLayout";
 import MainLayout from "../components/layouts/MainLayout";
 import RootLayout from "../components/layouts/RootLayout";
 import SideLayout from "../components/layouts/SideLayout";
+import MediaType from "../components/shared/MediaType";
 import Navbar from "../components/shared/NavBar";
-import SideBar from "../components/shared/NavBar";
+import SearchInput from "../components/shared/SearchInput";
 
 
 
@@ -20,6 +21,8 @@ export default function Search() {
 
             <MainLayout>
                 <HeaderLayout>
+                    <SearchInput/>
+                    <MediaType />
                 </HeaderLayout>
 
                 <ContaintDisplayLayout>

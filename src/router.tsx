@@ -10,8 +10,12 @@ import Detail from "./pages/DetailPage";
 export const router = createBrowserRouter([
     { path: '/', Component: Dashboard },
     { path: '/home', Component: Home },
-    { path: '/search', Component: Search },
-    {path: ':spItem/:filmId', Component: Detail},
+    { path: '/search', Component: Search,
+        children : [
+            {path: ':query',
+            }
+        ]
+    },
     {
         path: '/trending', Component: Trending,
         children: [
@@ -29,5 +33,7 @@ export const router = createBrowserRouter([
                 ]
             },
         ]
-    }
+    },
+    {path: ':spItem/:filmId', Component: Detail}
+    
 ])

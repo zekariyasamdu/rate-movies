@@ -1,7 +1,15 @@
-import { useState } from "react"
+import { useContext } from "react"
+import useSearchData from "../../hooks/fetch-data-hooks/useSearchData";
+import { useNavigate } from "react-router-dom";
+import { queryContext } from "../../contexts/QueryContext";
 
 function SearchInput() {
-  const [query, setQuery] = useState('');
+  
+  const nav = useNavigate()
+  const {query, setQuery}= useContext(queryContext);
+
+  const searchData = useSearchData();
+  console.log(searchData);
 
   function getValue(e: React.ChangeEvent<HTMLInputElement>) {
     if (e.target.value.trim() !== '') {
@@ -9,7 +17,13 @@ function SearchInput() {
     }
   }
 
-  
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' && query.trim() !== '') {
+      nav(`/search/${query}`)
+    }
+  });
+
+
 
   return (
     <div className="w-1/3">
