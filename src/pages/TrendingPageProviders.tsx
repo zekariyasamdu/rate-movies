@@ -4,6 +4,7 @@ import TimeRangeProvider from "../components/context-provider/TimeRangeProvider"
 import MediaProvider from "../components/context-provider/MediaProvider";
 import Trending from "./TrendingPage";
 import { NavBarProvider } from "../components/context-provider/NavBarProvider";
+import { QueryProvider } from "../components/context-provider/QueryProvider";
 
 
 export default function TrendingPageProviders() {
@@ -13,9 +14,9 @@ export default function TrendingPageProviders() {
                 <TimeRangeProvider>
                     <MediaProvider>
                         <NavBarProvider>
-
-                            <Trending />
-                            
+                            <QueryProvider>
+                                <Trending />
+                            </QueryProvider>
                         </NavBarProvider>
                     </MediaProvider>
                 </TimeRangeProvider>

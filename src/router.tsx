@@ -27,6 +27,7 @@ export const router = createBrowserRouter([
             },
         ]
     },
+    
     {
         path: '/trending', Component: TrendingPageProviders,
         children: [
