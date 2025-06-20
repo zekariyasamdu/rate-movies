@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { loadingContext } from "../../contexts/LoadingContext";
 import { pageContext } from "../../contexts/PageContext";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import { mediaContext } from "../../contexts/MediaContext";
 import type { IFetchedType } from "../../types/items";
 
 const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
@@ -10,7 +10,7 @@ export default function useFetchItemData(): IFetchedType | null {
 
     const [returnData, setReturnData] = useState<IFetchedType | null>(null)
     const { setIsLoading } = useContext(loadingContext)
-    const { headerItem } = useContext(trendingHeaderFocusContext)
+    const { headerItem } = useContext(mediaContext)
     const { headerRange } = useContext(timeRangeContext)
     const { pageNumber } = useContext(pageContext)
     

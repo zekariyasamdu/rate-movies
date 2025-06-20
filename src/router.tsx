@@ -18,7 +18,8 @@ export const router = createBrowserRouter([
                         path: ':query',
                         children: [
                             {
-                                path: ':page'
+                                path: ':page',
+                                Component: SearchPageProviders
                             }
                         ]
                     }
@@ -36,7 +37,8 @@ export const router = createBrowserRouter([
                         path: ':range',
                         children: [
                             {
-                                path: ':page'
+                                path: ':page',
+                                Component: TrendingPageProviders
                             }
                         ]
                     }

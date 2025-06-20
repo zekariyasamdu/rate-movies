@@ -19,8 +19,6 @@ export default function Trending() {
     return (
         <>
             
-
-
                             <RootLayout>
                                 <SideLayout>
                                     <Navbar />
@@ -47,9 +45,6 @@ export default function Trending() {
                                 </MainLayout>
 
                             </RootLayout>
-
-
-
 
         </>
     )

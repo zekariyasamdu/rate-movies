@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext"
+import { mediaContext } from "../../contexts/MediaContext"
 import { useNavigate } from "react-router-dom"
 import { pageContext } from "../../contexts/PageContext"
 import { timeRangeContext } from "../../contexts/TimeRangeContext"
@@ -8,7 +8,7 @@ import { timeRangeContext } from "../../contexts/TimeRangeContext"
 
 function TimePeriod() {
     const nav = useNavigate();
-    const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { headerItem } = useContext(mediaContext);
     const { setPageNumber } = useContext(pageContext);
     const { headerRange, setHeaderRange } = useContext(timeRangeContext);
 

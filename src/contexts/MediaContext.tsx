@@ -1,11 +1,11 @@
 import React, { createContext } from "react";
 
-type TrendingHeaderFocusContext = {
+type MediaContext = {
     headerItem: string,
     setHeaderItem: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const trendingHeaderFocusContext = createContext<TrendingHeaderFocusContext>({
+export const mediaContext = createContext<MediaContext>({
     headerItem: 'movie',
     setHeaderItem: () =>{}
 });

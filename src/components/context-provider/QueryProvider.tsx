@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom"
 import { queryContext } from "../../contexts/QueryContext";
 
 export function QueryProvider({children}: childrenType ){
-    const params: string = useParams().query || '';
+    const params: string = useParams().query || 'the';
     const [query, setQuery] = useState(params)
 
     return(

@@ -1,7 +1,7 @@
 
 import SpecificIdProvider from "../components/context-provider/SpecificIdProvider";
 import SideBar from "../components/shared/NavBar";
-import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
+import TrendingHeaderFocusProvider from "../components/context-provider/MediaProvider";
 import DetailContainer from "../components/movie-detail/DetailContainer";
 import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
 import FooterLayout from "../components/layouts/FooterLayout";

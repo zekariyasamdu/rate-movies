@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { specificIdContext } from "../../contexts/SpecificIdContext";
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import { mediaContext } from "../../contexts/MediaContext";
 import type { fetchedMovieType } from "../../types/items";
 
 
@@ -10,7 +10,7 @@ const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
 export default function useFetchMovieData(): fetchedMovieType | null {
     const [movieData, setMovieData] = useState<fetchedMovieType | null>(null);
     const { id } = useContext(specificIdContext);
-    const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { headerItem } = useContext(mediaContext);
 
 
     useEffect(() => {

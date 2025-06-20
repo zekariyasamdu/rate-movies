@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext"
+import { mediaContext } from "../../contexts/MediaContext"
 import { useNavigate } from "react-router-dom"
 import { pageContext } from "../../contexts/PageContext"
 import { timeRangeContext } from "../../contexts/TimeRangeContext"
@@ -10,15 +10,18 @@ import { queryContext } from "../../contexts/QueryContext"
 
 function MediaType() {
     const nav = useNavigate();
-    const { headerItem, setHeaderItem } = useContext(trendingHeaderFocusContext);
+    const { headerItem, setHeaderItem } = useContext(mediaContext);
     const { setPageNumber } = useContext(pageContext);
     const { headerRange } = useContext(timeRangeContext);
-    const {query}  = useContext(queryContext)
-    const {bar} = useContext(navBarContext)
+    const { query } = useContext(queryContext)
+    const { bar } = useContext(navBarContext)
 
     function setPeriod(e: React.ChangeEvent<HTMLSelectElement>) {
-        nav(e.target.value)
-        setPageNumber(1)
+        if (e.target.value !== '') {
+            nav(e.target.value)
+            setPageNumber(1)
+        }
+        console.log(e.target.value)
     }
     function loadMovie() {
         setHeaderItem('movie')
@@ -30,13 +33,16 @@ function MediaType() {
 
     return (
         <div>
-            <select className="text-[16px] p-2 border-2 rounded-2xl" value={`/trending/${headerItem}/${headerRange}/1`}  onChange={(e) => setPeriod(e)}>
-                <option value={`/${bar}/movie/${headerRange}/1`} onClick={loadMovie}>
-                    Movie
+            <select className="text-[16px] p-2 border-2 rounded-2xl" value={`/trending/${headerItem}/${headerRange}/1`} onChange={(e) => setPeriod(e)}>
+                <option value={''}>
+                    Media
+                </option>
+                <option value={`/${bar}/tv/${bar === 'search' ? query : headerRange}/1`} onClick={loadTv}>
+                    Tv
                 </option>
 
-                <option value={`/${bar}/tv/${bar === 'search'? query : headerRange}/1`} onClick={loadTv}>
-                    Tv
+                <option value={`/${bar}/movie/${bar === 'search' ? query : headerRange}/1`} onClick={loadMovie}>
+                    Movie
                 </option>
             </select>
         </div>

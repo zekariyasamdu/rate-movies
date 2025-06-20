@@ -1,7 +1,7 @@
 import { PageProvider } from "../components/context-provider/PageProvider";
 import { LoadingProvider } from "../components/context-provider/LoadingProvider";
 import TimeRangeProvider from "../components/context-provider/TimeRangeProvider";
-import TrendingHeaderFocusProvider from "../components/context-provider/TrendingHeaderFocusProvider";
+import MediaProvider from "../components/context-provider/MediaProvider";
 import Trending from "./TrendingPage";
 import { NavBarProvider } from "../components/context-provider/NavBarProvider";
 
@@ -11,13 +11,13 @@ export default function TrendingPageProviders() {
         <PageProvider>
             <LoadingProvider>
                 <TimeRangeProvider>
-                    <TrendingHeaderFocusProvider>
+                    <MediaProvider>
                         <NavBarProvider>
 
                             <Trending />
                             
                         </NavBarProvider>
-                    </TrendingHeaderFocusProvider>
+                    </MediaProvider>
                 </TimeRangeProvider>
             </LoadingProvider>
         </PageProvider>

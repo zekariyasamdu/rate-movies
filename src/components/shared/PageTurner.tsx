@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import { timeRangeContext } from "../../contexts/TimeRangeContext";
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import { mediaContext } from "../../contexts/MediaContext";
 import { navBarContext } from "../../contexts/NavBarContext";
 import { queryContext } from "../../contexts/QueryContext";
 
@@ -18,7 +18,7 @@ export default function PageTurner({totalPages}: PageTurnerProps ) {
     const nav = useNavigate();
     const { pageNumber, setPageNumber } = useContext(pageContext);
     const { headerRange } = useContext(timeRangeContext);
-    const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { headerItem } = useContext(mediaContext);
     const {query}  = useContext(queryContext)
     const {bar} = useContext(navBarContext)
     

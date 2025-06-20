@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react"
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext"
+import { mediaContext } from "../../contexts/MediaContext"
 import { queryContext } from "../../contexts/QueryContext"
 import type { IFetchedType } from "../../types/items"
 import { pageContext } from "../../contexts/PageContext"
@@ -8,10 +8,10 @@ const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
 function useSearchData() {
 
     const [searchData, setSearchData] = useState<IFetchedType | null>(null)
-    const query = useContext(queryContext);
-    const { headerItem } = useContext(trendingHeaderFocusContext) 
+    const {query} = useContext(queryContext);
+    const { headerItem } = useContext(mediaContext) 
     const {pageNumber} = useContext(pageContext)
-    console.log(query)
+    
     useEffect(() => {
         const fetchSearchData = async () => {
             try {

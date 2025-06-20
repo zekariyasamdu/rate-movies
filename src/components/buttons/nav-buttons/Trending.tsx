@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import  { useContext } from "react";
 import  { Link } from "react-router-dom";
 import { timeRangeContext } from "../../../contexts/TimeRangeContext";
-import { trendingHeaderFocusContext } from "../../../contexts/TrendingHeaderFocusContext";
+import { mediaContext } from "../../../contexts/MediaContext";
 import { useCheckLocation } from "../../../hooks/route-hooks/useExtractLocation";
 
 function Trending() {
 
     
     const { headerRange } = useContext(timeRangeContext);
-    const { headerItem } = useContext(trendingHeaderFocusContext);
+    const { headerItem } = useContext(mediaContext);
 
     return (
 

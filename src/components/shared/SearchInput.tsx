@@ -1,13 +1,13 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import { queryContext } from "../../contexts/QueryContext";
-import { trendingHeaderFocusContext } from "../../contexts/TrendingHeaderFocusContext";
+import { mediaContext } from "../../contexts/MediaContext";
 
 function SearchInput() {
 
   const nav = useNavigate()
   const { query, setQuery } = useContext(queryContext);
-  const { headerItem } = useContext(trendingHeaderFocusContext);
+  const { headerItem } = useContext(mediaContext);
 
 
 
