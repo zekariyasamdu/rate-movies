@@ -32,7 +32,7 @@ interface videoID {
     key: string
 }
 
-export interface fetchedMovieType {
+export interface IFetchedMovieType {
     title: string,
     overview: string,
     backdrop_path: string,

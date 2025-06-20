@@ -8,7 +8,7 @@ function SearchInput() {
   const nav = useNavigate()
   const { query, setQuery } = useContext(queryContext);
   const { headerItem } = useContext(mediaContext);
-
+  console.log(query); 
 
 
   function getValue(e: React.ChangeEvent<HTMLInputElement>) {

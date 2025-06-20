@@ -1,25 +1,21 @@
-
-import SpecificIdProvider from "../components/context-provider/SpecificIdProvider";
-import SideBar from "../components/shared/NavBar";
-import TrendingHeaderFocusProvider from "../components/context-provider/MediaProvider";
 import DetailContainer from "../components/movie-detail/DetailContainer";
-import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
-import FooterLayout from "../components/layouts/FooterLayout";
-import HeaderLayout from "../components/layouts/HeaderLayout";
 import MainLayout from "../components/layouts/MainLayout";
 import RootLayout from "../components/layouts/RootLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import Navbar from "../components/shared/NavBar";
+import useFetchSimilarData from "../hooks/fetch-data-hooks/useFetchSimilarData";
+import ItemsContainer from "../components/item-card/ItemsContainer";
 
 
 
 export default function Detail() {
+    const similarData = useFetchSimilarData();
+
     return (
-        <TrendingHeaderFocusProvider>
-            <SpecificIdProvider>
 
 
                 <RootLayout>
+
                     <SideLayout>
                         <Navbar />
                     </SideLayout>
@@ -27,14 +23,11 @@ export default function Detail() {
                     <MainLayout>
 
                         <DetailContainer />
+                        <ItemsContainer data={similarData}/>
 
                     </MainLayout>
-
                 </RootLayout>
 
-
-            </SpecificIdProvider>
-        </TrendingHeaderFocusProvider>
 
     )
 }

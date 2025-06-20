@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Home from "./pages/HomePage";
 import Dashboard from "./pages/DashboardPage";
-import Detail from "./pages/DetailPage";
 import TrendingPageProviders from "./pages/TrendingPageProviders";
 import SearchPageProviders from "./pages/SearchPageProviders";
+import DetailPageProviders from "./pages/DetailPageProviders";
 
 
 export const router = createBrowserRouter([
@@ -47,6 +47,6 @@ export const router = createBrowserRouter([
             },
         ]
     },
-    {path: ':spItem/:filmId', Component: Detail}
+    {path: ':spItem/:filmId', Component: DetailPageProviders}
     
 ])

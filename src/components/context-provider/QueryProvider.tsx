@@ -5,7 +5,7 @@ import { queryContext } from "../../contexts/QueryContext";
 
 export function QueryProvider({children}: childrenType ){
 
-    const params: string = useParams().query || 'trending';
+    const params: string = useParams().query || '';
     const [query, setQuery] = useState(params)
 
     return(

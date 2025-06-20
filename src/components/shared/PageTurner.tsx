@@ -28,14 +28,14 @@ export default function PageTurner({totalPages}: PageTurnerProps ) {
     function goToPreviousPage(): void {
         if (pageNumber - 1 > 0) {
             setPageNumber((p) => p - 1);
-            nav(`/${bar}/${headerItem}/${headerRange}/${pageNumber - 1}`);
+            nav(`/${bar}/${headerItem}/${bar === 'trending'? headerRange : query}/${pageNumber - 1}`);
         }
     }
 
     function goToNextPage(): void {
         if (lastPage && pageNumber + 1 < lastPage) {
             setPageNumber((p) => p + 1);
-            nav(`/${bar}/${headerItem}/${headerRange}/${pageNumber + 1}`);
+            nav(`/${bar}/${headerItem}/${bar === 'trending'? headerRange : query}/${pageNumber + 1}`);
         }
     }
 

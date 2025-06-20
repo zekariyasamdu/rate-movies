@@ -15,7 +15,9 @@ export default function TrendingPageProviders() {
                     <MediaProvider>
                         <NavBarProvider>
                             <QueryProvider>
+
                                 <Trending />
+                                
                             </QueryProvider>
                         </NavBarProvider>
                     </MediaProvider>
