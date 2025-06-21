@@ -10,7 +10,7 @@ export default function Navbar({addClass= ""}: NavbarProp) {
 
 
     return (
-        <div className={`${addClass} ml-auto z-20 p-5 h-max flex flex-col`}>
+        <div className={`${addClass} fixed z-20 p-5 h-max flex flex-col`}>
             <Search/>
             <Home/>
             <Trending/>

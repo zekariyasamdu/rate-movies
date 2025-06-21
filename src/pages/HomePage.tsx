@@ -1,32 +1,24 @@
-import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
-import FooterLayout from "../components/layouts/FooterLayout";
-import HeaderLayout from "../components/layouts/HeaderLayout";
-import MainLayout from "../components/layouts/MainLayout";
+import HorizontalItemContainer from "../components/item-card/HorizontalItemContainer";
+import HomeMainLayout from "../components/layouts/HomeMainLayout";
 import RootLayout from "../components/layouts/RootLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import Navbar from "../components/shared/NavBar";
-import SideBar from "../components/shared/NavBar";
+import useFetchItemData from "../hooks/fetch-data-hooks/useFetchItemData";
+import type { IFetchedType } from "../types/items";
 
 
 
 export default function Home() {
+    const fetchedData: IFetchedType | null = useFetchItemData();
     return (
 
         <RootLayout>
             <SideLayout>
                 <Navbar />
             </SideLayout>
-
-            <MainLayout>
-                <HeaderLayout>
-                </HeaderLayout>
-
-                <ContaintDisplayLayout>
-                </ContaintDisplayLayout>
-
-                <FooterLayout>
-                </FooterLayout>
-            </MainLayout>
+            <HomeMainLayout>
+                <HorizontalItemContainer title="Trending Movies" data={fetchedData}/>
+            </HomeMainLayout>
 
         </RootLayout>
     )
