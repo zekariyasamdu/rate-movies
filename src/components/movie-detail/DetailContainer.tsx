@@ -1,4 +1,3 @@
-import { useRef, useEffect } from "react";
 import useFetchMovieData from "../../hooks/fetch-data-hooks/useFetchMovieData"
 import BackDrop from "./BackDrop";
 import OverView from "./OverView";
@@ -11,9 +10,7 @@ import useFadeOutOnScroll from "../../hooks/style-hooks/useFadeOutOnScroll";
 
 export default function DetailContainer() {
     const movieData = useFetchMovieData()
-
-    const headerRef = useRef<HTMLDivElement | null>(null);
-    useFadeOutOnScroll(headerRef);
+    const headerRef = useFadeOutOnScroll();
 
     return (
         <div ref={headerRef} className="relative w-max h-max m-auto mt-10 ">
