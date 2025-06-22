@@ -7,12 +7,14 @@ import useScrollLeftRight from "../../hooks/style-hooks/useScrollLeftRight";
 
 
 type HorizontalItemContainerProps = {
-    data: IFetchedType | null
+    data: IFetchedType | null,
     title: string
 }
 
 export default function HorizontalItemContainer({ data, title }: HorizontalItemContainerProps) {
+
     const {scrollRef, scroll} = useScrollLeftRight();
+
 
     return (
         <div className="relative w-full h-[400px] ">
