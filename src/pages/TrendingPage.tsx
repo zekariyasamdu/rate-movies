@@ -12,6 +12,7 @@ import MediaType from "../components/shared/MediaType";
 import SearchInput from "../components/shared/SearchInput";
 import useFetchItemData from "../hooks/fetch-data-hooks/useFetchItemData";
 import type { IFetchedType } from "../types/items";
+import AppName from "../components/static-data/AppName";
 
 
 export default function Trending() {
@@ -26,6 +27,7 @@ export default function Trending() {
 
                                 <MainLayout>
                                     <HeaderLayout>
+                                        <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
                                         <TimePeriod/>
                                         <SearchInput/>
                                         <MediaType />

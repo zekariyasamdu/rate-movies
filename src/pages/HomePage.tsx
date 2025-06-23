@@ -5,6 +5,7 @@ import RootLayout from "../components/layouts/RootLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import Navbar from "../components/shared/NavBar";
 import SearchInput from "../components/shared/SearchInput";
+import AppName from "../components/static-data/AppName";
 import useFetchItemData from "../hooks/fetch-data-hooks/useFetchItemData";
 import useFetchTopRatedData from "../hooks/fetch-data-hooks/useFetchTopRatedData";
 import type { IFetchedType } from "../types/items";
@@ -22,6 +23,7 @@ export default function Home() {
             </SideLayout>
             <HomeMainLayout>
                 <HeaderLayout>
+                    <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
                     <SearchInput />
                 </HeaderLayout>
                 <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />

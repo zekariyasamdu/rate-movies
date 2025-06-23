@@ -9,6 +9,7 @@ import MediaType from "../components/shared/MediaType";
 import Navbar from "../components/shared/NavBar";
 import PageTurner from "../components/shared/PageTurner";
 import SearchInput from "../components/shared/SearchInput";
+import AppName from "../components/static-data/AppName";
 import useSearchData from "../hooks/fetch-data-hooks/useSearchData";
 import type { IFetchedType } from "../types/items";
 
@@ -25,6 +26,7 @@ export default function Search() {
 
             <MainLayout>
                 <HeaderLayout>
+                    <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
                     <SearchInput />
                     <MediaType />
                 </HeaderLayout>
