@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./pages/HomePage";
 import Dashboard from "./pages/DashboardPage";
 import TrendingPageProviders from "./pages/TrendingPageProviders";
 import SearchPageProviders from "./pages/SearchPageProviders";
 import DetailPageProviders from "./pages/DetailPageProviders";
+import SearchPageDashboardProviders from "./pages/SearchPageDashboardProvider";
+import HomePageProviders from "./pages/HomePageProviders";
 
 
 export const router = createBrowserRouter([
     { path: '/', Component: Dashboard },
-    { path: '/home', Component: Home },
+    { path: '/home', Component: HomePageProviders },
+    { path: '/search/dashboard', Component:  SearchPageDashboardProviders },
     { path: '/search', Component: SearchPageProviders,
         children: [
             {

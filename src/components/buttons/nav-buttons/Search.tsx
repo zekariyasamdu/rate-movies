@@ -9,7 +9,7 @@ function Search() {
 
         <div className={`side-bar-items ${useCheckLocation('search') ? 'text-blue-500' : ''}`}
             title="Search">
-            <Link to='/search' >
+            <Link to='/search/dashboard' >
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
             </Link>
         </div>

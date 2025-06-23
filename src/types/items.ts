@@ -16,11 +16,11 @@ export interface IFetchedType {
 
 }
 
-interface videoObject {
-    results : videoID[]
+interface IvideoObject {
+    results : IvideoID[]
 }
 
-interface videoID {
+interface IvideoID {
     key: string
 }
 
@@ -32,7 +32,7 @@ export interface IFetchedMovieType {
     release_date: string,
     adult: boolean,
     homepage: string,
-    videos: videoObject
+    videos: IvideoObject
 }
 
 

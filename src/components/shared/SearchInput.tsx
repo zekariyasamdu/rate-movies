@@ -2,13 +2,14 @@ import { useContext } from "react"
 import { useNavigate } from "react-router-dom";
 import { queryContext } from "../../contexts/QueryContext";
 import { mediaContext } from "../../contexts/MediaContext";
+import { navBarContext } from "../../contexts/NavBarContext";
 
 function SearchInput() {
 
   const nav = useNavigate()
   const { query, setQuery } = useContext(queryContext);
   const { headerItem } = useContext(mediaContext);
-  console.log(query); 
+  const {setBar} = useContext(navBarContext)
 
 
   function getValue(e: React.ChangeEvent<HTMLInputElement>) {
@@ -20,6 +21,7 @@ function SearchInput() {
   window.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && query.trim() !== '') {
       nav(`/search/${headerItem}/${query}/1`)
+      setBar('search')
     }
   });
 

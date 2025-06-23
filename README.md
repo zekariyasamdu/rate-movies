@@ -1,12 +1,11 @@
 # Movie Rater
 
-A simple web application for rating movies, allowing users to discover and review films.
+A simple web application that allowing users to discover and see ratings of films.
 Features
 
   Movie Search: Search for movies using the IMDb API.
   Movie Details: View detailed information about individual movies.
-  Rating System: Rate movies. (Further details on how ratings are stored and displayed would be added here if the feature is fully implemented.)
-
+  
 # Technologies Used
 
   Frontend: React.js, Typescript and Tailwind
