@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Dashboard from "./pages/DashboardPage";
-import TrendingPageProviders from "./pages/TrendingPageProviders";
-import SearchPageProviders from "./pages/SearchPageProviders";
-import DetailPageProviders from "./pages/DetailPageProviders";
-import SearchPageDashboardProviders from "./pages/SearchPageDashboardProvider";
-import HomePageProviders from "./pages/HomePageProviders";
+import TrendingPageProviders from "./pages/trending-page/TrendingPageProviders";
+import SearchPageProviders from "./pages/search-page/SearchPageProviders";
+import DetailPageProviders from "./pages/detail-page/DetailPageProviders";
+import SearchPageDashboardProviders from "./pages/search-page-dashboard/SearchPageDashboardProvider";
+import HomePageProviders from "./pages/home-page/HomePageProviders";
 
 
 export const router = createBrowserRouter([
