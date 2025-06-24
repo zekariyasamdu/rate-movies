@@ -1,6 +1,5 @@
 import ItemsContainer from "../components/item-card/ItemsContainer";
 import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
-import FooterLayout from "../components/layouts/FooterLayout";
 import HeaderLayout from "../components/layouts/HeaderLayout";
 import MainLayout from "../components/layouts/MainLayout";
 import RootLayout from "../components/layouts/RootLayout";
@@ -20,26 +19,23 @@ export default function Search() {
     return (
 
         <RootLayout>
-            <SideLayout>
-                <Navbar />
-            </SideLayout>
 
+            <HeaderLayout>
+                <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
+                <SearchInput />
+                <MediaType />
+            </HeaderLayout>
             <MainLayout>
-                <HeaderLayout>
-                    <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
-                    <SearchInput />
-                    <MediaType />
-                </HeaderLayout>
+
+                <SideLayout>
+                    <Navbar />
+                </SideLayout>
 
                 <ContaintDisplayLayout>
                     <ItemsContainer data={searchData} />
+                    <PageTurner totalPages={searchData?.total_pages} />
                 </ContaintDisplayLayout>
 
-                <FooterLayout>
-
-                    <PageTurner totalPages={searchData?.total_pages} />
-
-                </FooterLayout>
             </MainLayout>
 
         </RootLayout>

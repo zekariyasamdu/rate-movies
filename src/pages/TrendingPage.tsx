@@ -19,34 +19,31 @@ export default function Trending() {
     const fetchedData: IFetchedType | null = useFetchItemData();
     return (
         <>
-            
-                            <RootLayout>
-                                <SideLayout>
-                                    <Navbar />
-                                </SideLayout>
 
-                                <MainLayout>
-                                    <HeaderLayout>
-                                        <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
-                                        <TimePeriod/>
-                                        <SearchInput/>
-                                        <MediaType />
-                                    </HeaderLayout>
+            <RootLayout>
+                <HeaderLayout>
+                    <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
+                    <TimePeriod />
+                    <SearchInput />
+                    <MediaType />
+                </HeaderLayout>
+                <MainLayout>
 
-                                    <ContaintDisplayLayout>
+                    <SideLayout>
+                        <Navbar />
+                    </SideLayout>
 
-                                        <ItemsContainer data={fetchedData} />
+                    <ContaintDisplayLayout>
 
-                                    </ContaintDisplayLayout>
+                        <ItemsContainer data={fetchedData} />
+                        <PageTurner totalPages={fetchedData?.total_pages} />
+                        
+                    </ContaintDisplayLayout>
 
-                                    <FooterLayout>
 
-                                        <PageTurner totalPages={fetchedData?.total_pages} />
-                                        
-                                    </FooterLayout>
-                                </MainLayout>
+                </MainLayout>
 
-                            </RootLayout>
+            </RootLayout>
 
         </>
     )

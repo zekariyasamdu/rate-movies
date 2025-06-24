@@ -1,6 +1,7 @@
 import HorizontalItemContainer from "../components/item-card/HorizontalItemContainer";
+import ContaintDisplayLayout from "../components/layouts/ContaintDisplayLayout";
 import HeaderLayout from "../components/layouts/HeaderLayout";
-import HomeMainLayout from "../components/layouts/HomeMainLayout";
+import MainLayout from "../components/layouts/MainLayout";
 import RootLayout from "../components/layouts/RootLayout";
 import SideLayout from "../components/layouts/SideLayout";
 import Navbar from "../components/shared/NavBar";
@@ -18,17 +19,25 @@ export default function Home() {
     return (
 
         <RootLayout>
-            <SideLayout>
-                <Navbar />
-            </SideLayout>
-            <HomeMainLayout>
-                <HeaderLayout>
-                    <AppName className="absolute left-0 top-1/2 -translate-y-1/2"/>
-                    <SearchInput />
-                </HeaderLayout>
-                <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
-                <HorizontalItemContainer title="Trending Movies" data={fetchedData} />
-            </HomeMainLayout>
+
+            <HeaderLayout>
+                <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
+                <SearchInput />
+            </HeaderLayout>
+
+            <MainLayout>
+                <SideLayout>
+                    <Navbar />
+                </SideLayout>
+                
+                    <ContaintDisplayLayout>
+
+                        <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
+                        <HorizontalItemContainer title="Trending Movies" data={fetchedData} />
+                    </ContaintDisplayLayout>
+
+            </MainLayout>
+
 
         </RootLayout>
     )
