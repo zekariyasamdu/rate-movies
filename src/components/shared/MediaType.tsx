@@ -21,7 +21,6 @@ function MediaType() {
             nav(e.target.value)
             setPageNumber(1)
         }
-        console.log(e.target.value)
     }
     function loadMovie() {
         setHeaderItem('movie')

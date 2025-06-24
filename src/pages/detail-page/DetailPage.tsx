@@ -7,7 +7,6 @@ import useFetchSimilarData from "../../hooks/fetch-data-hooks/useFetchSimilarDat
 import ItemsContainer from "../../components/item-card/ItemsContainer";
 import ContaintDisplayLayout from "../../components/layouts/ContaintDisplayLayout";
 import HeaderLayout from "../../components/layouts/HeaderLayout";
-import MediaType from "../../components/shared/MediaType";
 import SearchInput from "../../components/shared/SearchInput";
 import AppName from "../../components/static-data/AppName";
 
@@ -24,7 +23,6 @@ export default function Detail() {
                 <HeaderLayout>
                     <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
                     <SearchInput />
-                    <MediaType />
                 </HeaderLayout>
 
             <MainLayout>

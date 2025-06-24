@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Dashboard from "./pages/DashboardPage";
+import Dashboard from "./pages/dashboard/DashboardPage";
 import TrendingPageProviders from "./pages/trending-page/TrendingPageProviders";
 import SearchPageProviders from "./pages/search-page/SearchPageProviders";
 import DetailPageProviders from "./pages/detail-page/DetailPageProviders";

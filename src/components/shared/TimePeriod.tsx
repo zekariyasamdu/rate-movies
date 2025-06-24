@@ -13,7 +13,6 @@ function TimePeriod() {
     const { headerRange, setHeaderRange } = useContext(timeRangeContext);
 
     function setPeriod(e: React.ChangeEvent<HTMLSelectElement>) {
-        console.log(e.target.value)
         nav(e.target.value)
         setPageNumber(1)
     }

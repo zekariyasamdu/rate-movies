@@ -14,10 +14,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 export default function DetailContainer() {
     const movieData: IFetchedMovieType | null = useFetchMovieData()
     const headerRef = useFadeOutOnScroll();
-    console.log(movieData)
+    
     return (
 
-        <div ref={headerRef} className="relative w-max h-max m-auto mt-10 ">
+        <div ref={headerRef} className="relative w-max h-max m-auto mt-2 ">
             <div className="backdrop opacity-90 absolute z-10 w-full h-full"></div>
             <BackDrop className="max-w max-h rounded-3xl" src={movieData?.backdrop_path} />
             <div className="z-20 absolute flex flex-col gap-5 bottom-20 left-5">
