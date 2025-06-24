@@ -12,6 +12,7 @@ import SearchInput from "../../components/shared/SearchInput";
 import useFetchItemData from "../../hooks/fetch-data-hooks/useFetchItemData";
 import type { IFetchedType } from "../../types/items";
 import AppName from "../../components/static-data/AppName";
+import Login from "../../components/buttons/nav-buttons/Login";
 
 
 export default function Trending() {
@@ -25,6 +26,7 @@ export default function Trending() {
                     <TimePeriod />
                     <SearchInput />
                     <MediaType />
+                    <Login className="absolute left-0 right-5"/>
                 </HeaderLayout>
                 <MainLayout>
 

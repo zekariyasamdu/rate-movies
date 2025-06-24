@@ -30,10 +30,10 @@ function SearchInput() {
 
 
   return (
-    <div className="w-1/3">
-      <div className="relative">
-        <div className="absolute left-3 top-1/2 -translate-y-1/2 "><FontAwesomeIcon icon={faSearch} /></div>
-        <input placeholder="search" className="border-2 rounded-3xl w-full text-[16px] p-3.5 pl-10 border-amber-100" onChange={(e) => getValue(e)}></input>
+    <div className="w-1/4">
+      <div className="relative ">
+        <div className="absolute text-[14px] left-3 top-1/2 -translate-y-1/2 "><FontAwesomeIcon icon={faSearch} /></div>
+        <input placeholder="search" className="border-2 rounded-3xl w-full text-[14px] p-2 pl-10 border-amber-100" onChange={(e) => getValue(e)}></input>
       </div>
     </div>
   )

@@ -1,3 +1,5 @@
+import Login from "../../components/buttons/nav-buttons/Login";
+import HeaderLayout from "../../components/layouts/HeaderLayout";
 import MainLayout from "../../components/layouts/MainLayout";
 import RootLayout from "../../components/layouts/RootLayout";
 import SearchDashboardLayout from "../../components/layouts/SearchDashboardLayout";
@@ -12,8 +14,12 @@ export default function SearchPageDashboard() {
     return (
 
         <RootLayout>
-            <MainLayout>
 
+            <HeaderLayout>
+                <Login className=""/>
+            </HeaderLayout>
+
+            <MainLayout>
                 <SideLayout>
                     <Navbar />
                 </SideLayout>

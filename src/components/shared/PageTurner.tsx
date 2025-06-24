@@ -41,7 +41,7 @@ export default function PageTurner({totalPages}: PageTurnerProps ) {
 
     return (
         <div
-            className=" w-1/4 flex gap-3 p-2 justify-center m-auto rounded-4xl mb-15 text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
+            className=" w-1/4 flex gap-3 p-2 justify-center m-auto rounded-4xl mb-0 text-D-primary bg-L-tertiary dark:text-L-primary dark:bg-D-tertiary"
             title="pages"
         >
             <div >Showing {pageNumber} of {lastPage}</div>

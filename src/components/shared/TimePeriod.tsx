@@ -27,7 +27,7 @@ function TimePeriod() {
 
     return (
         <div >
-            <select  className="text-[16px] p-2 border-2 rounded-2xl" value={`/trending/${headerItem}/${headerRange}/1`}   onChange={(e) => setPeriod(e)}>
+            <select  className="text-[14px] p-2 border-2 rounded-2xl" value={`/trending/${headerItem}/${headerRange}/1`}   onChange={(e) => setPeriod(e)}>
                 <option value={`/trending/${headerItem}/day/1`} onClick={loadDay}>
                     Day
                 </option>

@@ -9,6 +9,7 @@ import ContaintDisplayLayout from "../../components/layouts/ContaintDisplayLayou
 import HeaderLayout from "../../components/layouts/HeaderLayout";
 import SearchInput from "../../components/shared/SearchInput";
 import AppName from "../../components/static-data/AppName";
+import Login from "../../components/buttons/nav-buttons/Login";
 
 
 
@@ -23,6 +24,7 @@ export default function Detail() {
                 <HeaderLayout>
                     <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
                     <SearchInput />
+                    <Login className="absolute left-0 right-5"/>
                 </HeaderLayout>
 
             <MainLayout>

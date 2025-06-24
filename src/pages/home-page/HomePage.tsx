@@ -1,3 +1,4 @@
+import Login from "../../components/buttons/nav-buttons/Login";
 import HorizontalItemContainer from "../../components/item-card/HorizontalItemContainer";
 import ContaintDisplayLayout from "../../components/layouts/ContaintDisplayLayout";
 import HeaderLayout from "../../components/layouts/HeaderLayout";
@@ -23,6 +24,7 @@ export default function Home() {
             <HeaderLayout>
                 <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
                 <SearchInput />
+                <Login className="absolute left-0 right-5"/>
             </HeaderLayout>
 
             <MainLayout>
