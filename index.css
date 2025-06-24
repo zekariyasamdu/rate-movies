@@ -1,42 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comic+Relief:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-    --color-D-primary:   oklch(0.147 0.004 49.25);
-    --color-D-secondary: oklch(0.216 0.006 56.043);
-    --color-D-tertiary:  oklch(0.268 0.007 34.298);
+  --color-D-primary: oklch(0.147 0.004 49.25);
+  --color-D-secondary: oklch(0.216 0.006 56.043);
+  --color-D-tertiary: oklch(0.268 0.007 34.298);
 
-    --color-L-primary:  oklch(0.869 0.005 56.366) ;
-    --color-L-secondary: oklch(0.985 0.001 106.423);
-    --color-L-tertiary:  oklch(0.709 0.01 56.259);
-    --font-open-sans:  Open Sans, "sans-serif";
+  --color-L-primary: oklch(0.869 0.005 56.366);
+  --color-L-secondary: oklch(0.985 0.001 106.423);
+  --color-L-tertiary: oklch(0.709 0.01 56.259);
+  --font-open-sans: Open Sans, "sans-serif";
 }
 
 @layer utilities {
 }
 
-
 @layer base {
-    body{
-        @apply relative flex flex-row justify-center h-max m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary  ;
-    }
+  body {
+    @apply relative flex flex-row justify-center h-max m-0 p-0 text-white text-2xl bg-L-primary font-open-sans dark:bg-D-primary;
+  }
 }
 
 @layer components {
-    .side-bar-items {
-        @apply  w-9 h-9 p-1 flex justify-center items-center rounded-full cursor-pointer my-2.5 text-D-primary hover:bg-L-primary dark:text-L-primary  dark:hover:bg-D-primary;
-    }
-    .headers {
-        @apply  absolute m-auto p-3 gap-5 flex flex-row items-center justify-between right-0 left-0 my-4 rounded-2xl w-1/2 h-10 z-30 bg-L-tertiary dark:bg-D-tertiary
-    }
-    .headers-items {
-        @apply cursor-pointer text-D-primary dark:text-L-primary hover:border-b-2 hover:border-blue-200  hover:text-white
-    }
-    .page-turner {
-        @apply cursor-pointer border-2 w-16 text-[20px] border-blue-400 hover:text-white rounded-2xl
-    }
-} 
-    
-
+  .side-bar-items {
+    @apply w-9 h-9 p-1 flex justify-center items-center rounded-full cursor-pointer my-2.5 text-D-primary hover:bg-L-primary dark:text-L-primary  dark:hover:bg-D-primary;
+  }
+  .headers {
+    @apply absolute m-auto p-3 gap-5 flex flex-row items-center justify-between right-0 left-0 my-4 rounded-2xl w-1/2 h-10 z-30 bg-L-tertiary dark:bg-D-tertiary;
+  }
+  .headers-items {
+    @apply cursor-pointer text-D-primary dark:text-L-primary hover:border-b-2 hover:border-blue-200  hover:text-white;
+  }
+  .page-turner {
+    @apply cursor-pointer border-2 w-16 text-[20px] border-blue-400 hover:text-white rounded-2xl;
+  }
+  .backdrop {
+    background: #000105;
+    background: linear-gradient(
+      25deg,
+      rgba(0, 1, 5, 1) 21%,
+      rgba(0, 0, 0, 0.1) 50%
+    );
+  }
+}

@@ -29,7 +29,5 @@ export default function useFetchSimilarData(): IFetchedType | null {
         }
         fetchSimilarData();
     }, [setSimilarData, id, headerItem])
-
-    console.log(similarData)
     return similarData;
 }

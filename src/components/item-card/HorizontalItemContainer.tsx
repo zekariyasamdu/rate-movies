@@ -19,7 +19,7 @@ export default function HorizontalItemContainer({ data, title }: HorizontalItemC
     return (
         <div className="relative w-full h-[400px] ">
 
-            <h1 className="ml-32 text-[20px] ">{title}</h1>
+            <h1 className="ml-32 text-[20px] border-l-2 pl-3 border-blue-400">{title}</h1>
             <button className="absolute left-10 top-1/2 border-2 w-12 h-12 rounded-full cursor-pointer" onClick={() => scroll("left")}>   <FontAwesomeIcon icon={faArrowLeft}></FontAwesomeIcon> </button>
 
             <div ref={scrollRef} className="flex-wrap flex-col flex w-6/7 h-[100%] m-auto overflow-x-hidden overflow-y-hidden">

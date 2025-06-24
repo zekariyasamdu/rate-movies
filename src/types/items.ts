@@ -24,15 +24,23 @@ interface IvideoID {
     key: string
 }
 
+
+export interface IGenres{
+    id: number,
+    name: string
+}
+
 export interface IFetchedMovieType {
     title: string,
     overview: string,
     backdrop_path: string,
-    genres: [],
+    genres: IGenres[],
     release_date: string,
     adult: boolean,
     homepage: string,
-    videos: IvideoObject
+    videos: IvideoObject,
+    vote_average: number
 }
+
 
 

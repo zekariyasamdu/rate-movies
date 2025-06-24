@@ -17,7 +17,7 @@ const PlayButton = ({ link, ...props }: playButtonProp) => {
     }
 
     return (
-        <button onClick={playVideo}   {...props}> <FontAwesomeIcon icon={faPlay}/> Watch Now</button>
+        <button onClick={playVideo}   {...props}> <FontAwesomeIcon icon={faPlay}/> Play</button>
     )
 }
 
