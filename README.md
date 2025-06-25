@@ -3,7 +3,7 @@
 A simple web application that allowing users to discover and see ratings of films.
 Features
 
-  Movie Search: Search for movies using the IMDb API.
+  Movie Search: Search for movies using the TMDb API.
   Movie Details: View detailed information about individual movies.
   
 # Technologies Used

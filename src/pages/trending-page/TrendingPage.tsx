@@ -26,7 +26,7 @@ export default function Trending() {
                     <TimePeriod />
                     <SearchInput />
                     <MediaType />
-                    <Login className="absolute left-0 right-5"/>
+                    <Login className="absolute left-0 right-5" />
                 </HeaderLayout>
                 <MainLayout>
 
@@ -36,12 +36,9 @@ export default function Trending() {
 
                     <ContaintDisplayLayout>
 
-                        <ItemsContainer data={fetchedData} />
                         <PageTurner totalPages={fetchedData?.total_pages} />
-                        
+                        <ItemsContainer data={fetchedData} />
                     </ContaintDisplayLayout>
-
-
                 </MainLayout>
 
             </RootLayout>

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-export default function useFadeOutOnScroll() {
+export default function useFadeOutOnScroll() : React.RefObject<HTMLDivElement | null> {
     const headerRef = useRef<HTMLDivElement | null>(null);
     useEffect(() => {
         const fadeOutOnScroll = () => {

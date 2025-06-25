@@ -2,7 +2,7 @@ import type { childrenType } from "../../types/general"
 
 export default function FooterLayout({ children }: childrenType) {
     return (
-        <div className="absolute  bottom-0 w-full h-20  mb-0 ">
+        <div className="relative w-full h-20  mb-0 ">
             {children}
         </div>
     )

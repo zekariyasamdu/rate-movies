@@ -18,7 +18,6 @@ import type { IFetchedType } from "../../types/items";
 export default function Home() {
     const fetchedData: IFetchedType | null = useFetchItemData();
     const topRatedFetchedData: IFetchedType | null = useFetchTopRatedData();
-    
     return (
 
         <RootLayout>
