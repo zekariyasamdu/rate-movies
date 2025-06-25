@@ -1,5 +1,4 @@
-import useFetchMovieData from "../../hooks/fetch-data-hooks/useFetchMovieData"
-import BackDrop from "./BackDrop";
+import BackDrop from "./DetailBackDrop";
 import OverView from "./OverView";
 import PlayButton from "./PlayButton";
 import Tags from "./Tags";
@@ -9,10 +8,11 @@ import type { IFetchedMovieType } from "../../types/items";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
+interface DetailContainerProps {
+    movieData: IFetchedMovieType | null
+}
 
-
-export default function DetailContainer() {
-    const movieData: IFetchedMovieType | null = useFetchMovieData()
+export default function DetailContainer({movieData} : DetailContainerProps) {
     const headerRef = useFadeOutOnScroll();
     
     return (

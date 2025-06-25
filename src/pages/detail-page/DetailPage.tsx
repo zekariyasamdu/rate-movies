@@ -10,12 +10,14 @@ import HeaderLayout from "../../components/layouts/HeaderLayout";
 import SearchInput from "../../components/shared/SearchInput";
 import AppName from "../../components/static-data/AppName";
 import Login from "../../components/buttons/nav-buttons/Login";
+import useFetchMovieData from "../../hooks/fetch-data-hooks/useFetchMovieData";
+import type { IFetchedMovieType } from "../../types/items";
 
 
 
 export default function Detail() {
     const similarData = useFetchSimilarData();
-
+    const movieData: IFetchedMovieType | null = useFetchMovieData()
     return (
 
 
@@ -33,7 +35,7 @@ export default function Detail() {
                 </SideLayout>
                 <ContaintDisplayLayout>
 
-                    <DetailContainer />
+                    <DetailContainer movieData={movieData} />
                     <ItemsContainer data={similarData} />
                 </ContaintDisplayLayout>
 

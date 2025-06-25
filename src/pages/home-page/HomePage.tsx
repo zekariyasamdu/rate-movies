@@ -1,4 +1,5 @@
 import Login from "../../components/buttons/nav-buttons/Login";
+import HorizontalBackDropContainer from "../../components/home-backdrop/HorizontalBackDropContainer";
 import HorizontalItemContainer from "../../components/item-card/HorizontalItemContainer";
 import ContaintDisplayLayout from "../../components/layouts/ContaintDisplayLayout";
 import HeaderLayout from "../../components/layouts/HeaderLayout";
@@ -17,6 +18,7 @@ import type { IFetchedType } from "../../types/items";
 export default function Home() {
     const fetchedData: IFetchedType | null = useFetchItemData();
     const topRatedFetchedData: IFetchedType | null = useFetchTopRatedData();
+    
     return (
 
         <RootLayout>
@@ -33,7 +35,7 @@ export default function Home() {
                 </SideLayout>
                 
                     <ContaintDisplayLayout>
-
+                        <HorizontalBackDropContainer  data={fetchedData}/>
                         <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
                         <HorizontalItemContainer title="Trending Movies" data={fetchedData} />
                     </ContaintDisplayLayout>

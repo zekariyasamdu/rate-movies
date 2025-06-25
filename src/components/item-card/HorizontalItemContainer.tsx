@@ -13,7 +13,7 @@ type HorizontalItemContainerProps = {
 
 export default function HorizontalItemContainer({ data, title }: HorizontalItemContainerProps) {
     const { scrollRef, scroll } = useScrollLeftRight();
-    console.log(data)
+    
 
     return (
         <div className="relative w-full h-[400px] ">

@@ -7,7 +7,7 @@ export default function useScrollLeftRight() {
 
         if(scrollRef.current){
             const {scrollLeft, clientWidth } = scrollRef.current;
-            const scrollAmount = clientWidth * 0.8;
+            const scrollAmount = clientWidth * 1;
             scrollRef.current.scrollTo({
                 left: position == 'left'? scrollLeft -  scrollAmount : scrollAmount + scrollLeft,
                 behavior: "smooth"
