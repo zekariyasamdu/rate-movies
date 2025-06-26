@@ -4,7 +4,7 @@ export default function useScrollLeftRight() {
     const scrollRef = useRef<HTMLDivElement>(null)
     const [isScrolling, setIsScrolling] = useState(false)
 
-    const scroll = async (position: 'left' | 'right') => {
+    const scroll = (position: 'left' | 'right') => {
 
         if (scrollRef.current && !isScrolling) {
 
