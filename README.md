@@ -45,3 +45,11 @@ This project uses an external API to fetch movie data. It is crucial to set up y
   Add the following line to your .env file, replacing YOUR_IMDB_API_KEY with the actual key you obtained:
 
     VITE_API_READ_ACCESS_TOKEN= `${YOUR_TMDB_API_KEY}`
+
+
+
+
+![image alt](https://github.com/zekariyasamdu/rate-movies/blob/7a17ddd472099b2f1991f05b7db182100928da4f/src/assets/Screenshot%202025-06-26%20230732.png)
+![image alt](https://github.com/zekariyasamdu/rate-movies/blob/7a17ddd472099b2f1991f05b7db182100928da4f/src/assets/Screenshot%202025-06-26%20230757.png)
+![image alt](https://github.com/zekariyasamdu/rate-movies/blob/7a17ddd472099b2f1991f05b7db182100928da4f/src/assets/Screenshot%202025-06-26%20230706.png)
+
