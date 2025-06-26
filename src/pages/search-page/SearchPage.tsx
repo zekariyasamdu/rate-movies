@@ -34,6 +34,7 @@ export default function Search() {
                 </SideLayout>
 
                 <ContaintDisplayLayout>
+                    
                     <ItemsContainer data={searchData} />
                     <PageTurner totalPages={searchData?.total_pages} />
                 </ContaintDisplayLayout>

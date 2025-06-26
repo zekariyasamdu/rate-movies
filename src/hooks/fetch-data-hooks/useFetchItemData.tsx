@@ -6,7 +6,9 @@ import { mediaContext } from "../../contexts/MediaContext";
 import type { IFetchedType } from "../../types/items";
 
 const IMDB_API_KEY = import.meta.env.VITE_API_READ_ACCESS_TOKEN
-export default function useFetchItemData(): IFetchedType | null {
+
+
+export default function useFetchItemData( media :  "movie" | "tv" | "" = ""): IFetchedType | null {
 
     const [returnData, setReturnData] = useState<IFetchedType | null>(null)
     const { setIsLoading } = useContext(loadingContext)
@@ -21,7 +23,7 @@ export default function useFetchItemData(): IFetchedType | null {
 
             try {
                 setIsLoading(true)
-                const rawData: Response = await fetch(`https://api.themoviedb.org/3/trending/${headerItem}/${headerRange}?page=${pageNumber}?language=en-US`, {
+                const rawData: Response = await fetch(`https://api.themoviedb.org/3/trending/${media? media : headerItem}/${headerRange}?page=${pageNumber}?language=en-US`, {
                     headers: {
                         'Authorization': `Bearer ${IMDB_API_KEY}`
                     }
@@ -36,7 +38,7 @@ export default function useFetchItemData(): IFetchedType | null {
         }
         getTrendingMovies();
 
-    }, [headerItem, headerRange, pageNumber, setIsLoading, setReturnData])
+    }, [headerItem, headerRange, pageNumber, setIsLoading, setReturnData, media])
 
     return returnData;
 

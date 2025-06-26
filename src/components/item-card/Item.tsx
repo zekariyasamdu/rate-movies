@@ -21,6 +21,7 @@ export default function Item({ src, rating, title, id, release_date }: ItemConta
     function changeId() {
         setId(id);
     }
+    console.log(release_date)
 
     return (
         <Link to={`/${headerItem}/${id}`} onClick={changeId} className="group w-[210px] h-[363px] relative m-3 flex-center text-center">
@@ -29,7 +30,7 @@ export default function Item({ src, rating, title, id, release_date }: ItemConta
                 <Rating rating={rating} className="opacity-0 group-hover:opacity-100 absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%] text-7xl text-L-primary"/>
             </div>
             <div className="w-full h-max flex flex-col mb-0">
-                <Year className="mr-auto ml-2 text-[15px]  text-L-tertiary" date={release_date}/>
+                <Year className="mr-auto ml-2 text-[15px]  text-L-tertiary" date={release_date? release_date : ''}/>
                 <Title className="mr-auto w-full h-max flex text-start flex-wrap ml-2 text-[18px]" title={title}/>
             </div>
         </Link>

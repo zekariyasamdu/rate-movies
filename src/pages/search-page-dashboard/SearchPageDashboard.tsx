@@ -9,8 +9,8 @@ import SearchInput from "../../components/shared/SearchInput";
 import AppName from "../../components/static-data/AppName";
 import Contact from "../../components/static-data/Contact";
 
-
 export default function SearchPageDashboard() {
+    
     return (
 
         <RootLayout>
@@ -28,6 +28,7 @@ export default function SearchPageDashboard() {
                     <SearchInput />
                     <Contact />
                 </SearchDashboardLayout>
+                
             </MainLayout>
         </RootLayout>
     )

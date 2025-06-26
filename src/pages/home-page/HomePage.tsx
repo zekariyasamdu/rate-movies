@@ -17,7 +17,8 @@ import type { IFetchedType } from "../../types/items";
 
 
 export default function Home() {
-    const fetchedData: IFetchedType | null = useFetchItemData();
+    const fetchedDataMovie: IFetchedType | null = useFetchItemData();
+    const fetchedDataTv: IFetchedType | null = useFetchItemData("tv");
     const topRatedFetchedData: IFetchedType | null = useFetchTopRatedData();
     return (
 
@@ -26,20 +27,31 @@ export default function Home() {
             <HeaderLayout>
                 <AppName className="absolute left-5 p-5 top-1/2 -translate-y-1/2" />
                 <SearchInput />
-                <Login className="absolute left-0 right-5"/>
+                <Login className="absolute left-0 right-5" />
             </HeaderLayout>
 
             <MainLayout>
                 <SideLayout>
                     <Navbar />
                 </SideLayout>
-                
-                    <ContaintDisplayLayout>
-                        <HorizontalBackDropContainer  data={fetchedData}/>
-                        <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
-                        <HorizontalItemContainer title="Trending Movies" data={fetchedData} />
-                        <RecentlyAddedContainer />
-                    </ContaintDisplayLayout>
+
+                <ContaintDisplayLayout>
+                    <HorizontalBackDropContainer data={fetchedDataMovie} />
+
+                    <div className="flex flex-row w-full">
+
+                        <div className="flex flex-col gap-10 w-[80%]">
+                            <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
+                            <HorizontalItemContainer title="Trending Movies" data={fetchedDataMovie}  />
+                            <HorizontalItemContainer title="Trending Tv" data={fetchedDataTv}  />
+                        </div>
+
+                        <div className="w-[20%]">
+                            <RecentlyAddedContainer />
+                        </div>
+                    </div>
+
+                </ContaintDisplayLayout>
 
             </MainLayout>
 
