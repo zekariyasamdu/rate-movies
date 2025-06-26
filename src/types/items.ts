@@ -3,10 +3,12 @@
 export interface IMovie {
     id: number,
     title: string,
+    original_name: string,
     release_date: string,
     backdrop_path: string,
     poster_path: string,
     overview: string,
+    first_air_date: string,
     vote_average: number
 }
 

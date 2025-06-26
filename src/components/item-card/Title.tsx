@@ -2,7 +2,7 @@
 
 type TitleType = {
     title: string | undefined
-} & React.HTMLAttributes<HTMLImageElement>
+} & React.HTMLAttributes<HTMLElement>
 
 
 export default function Title({title, ...props}: TitleType) {

@@ -6,6 +6,7 @@ import HeaderLayout from "../../components/layouts/HeaderLayout";
 import MainLayout from "../../components/layouts/MainLayout";
 import RootLayout from "../../components/layouts/RootLayout";
 import SideLayout from "../../components/layouts/SideLayout";
+import RecentlyAddedContainer from "../../components/recently-added/RecentlyAddedContainer";
 import Navbar from "../../components/shared/NavBar";
 import SearchInput from "../../components/shared/SearchInput";
 import AppName from "../../components/static-data/AppName";
@@ -37,6 +38,7 @@ export default function Home() {
                         <HorizontalBackDropContainer  data={fetchedData}/>
                         <HorizontalItemContainer title="Top Rated Movies" data={topRatedFetchedData} />
                         <HorizontalItemContainer title="Trending Movies" data={fetchedData} />
+                        <RecentlyAddedContainer />
                     </ContaintDisplayLayout>
 
             </MainLayout>

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IMovie } from "../../types/items";
 import BackDrop from "../movie-detail/DetailBackDrop";
 import OverView from "../movie-detail/OverView";
-import Title from "../movie-detail/Title";
+import Title from "../item-card/Title";
 import { useContext } from "react";
 import { mediaContext } from "../../contexts/MediaContext";
 import { specificIdContext } from "../../contexts/SpecificIdContext";
