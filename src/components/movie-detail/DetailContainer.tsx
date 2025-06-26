@@ -33,7 +33,7 @@ export default function DetailContainer({ movieData }: DetailContainerProps) {
                     {movieData?.genres?.map((item) => <Tags key={item.id} text={item.name} />)}
                 </div>
                 <OverView overview={movieData?.overview} className="text-[18px] text-L-tertiary w-[50%] flex flex-wrap"></OverView>
-                <PlayButton link={movieData?.videos.results[0].key || ''} className="flex items-center text-[19px] gap-2  w-max h-max text-D-primary p-3 rounded-full hover:cursor-pointer bg-L-secondary" />
+                <PlayButton link={movieData?.videos.results[0]?.key? movieData?.videos.results[0].key :  ''} className="flex items-center text-[19px] gap-2  w-max h-max text-D-primary p-3 rounded-full hover:cursor-pointer bg-L-secondary" />
             </div>
 
         </div>
